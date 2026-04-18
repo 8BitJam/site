@@ -15,7 +15,7 @@ function Nav() {
             alt="8-Bit Jam Logo"
             width={80}
             height={80}
-            className="w-15"
+            className="h-12 w-15"
           />{" "}
           <span className="block sm:hidden md:block">8-BIT JAM</span>
         </Link>

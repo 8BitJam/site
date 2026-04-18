@@ -20,7 +20,7 @@ function Hero() {
           </div>
           <div className="flex items-center gap-x-3">
             <FaLocationDot size={25} />
-            FAIRFAX, VIRGINIA
+            HERNDON, VIRGINIA
           </div>
         </div>
         <Form />
