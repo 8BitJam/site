@@ -17,6 +17,22 @@ export const metadata: Metadata = {
   title: "Home | 8-Bit Jam",
   description:
     "Best game-themed hackathon in the DMV area taking place this August in Herndon, Virginia!",
+  authors: [{ name: "8-Bit Jam", url: "https://8bitjam.win" }],
+  openGraph: {
+    title: "Home | 8-Bit Jam",
+    description:
+      "Best game-themed hackathon in the DMV area taking place this August in Herndon, Virginia!",
+    url: "https://8bitjam.win",
+    siteName: "8-Bit Jam",
+    images: [
+      {
+        url: "/logo.png",
+        width: 50,
+        height: 50,
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
