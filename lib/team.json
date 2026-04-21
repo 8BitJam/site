@@ -1,0 +1,42 @@
+{
+  "team": [
+    {
+      "id": 0,
+      "name": "Tony Hsu",
+      "image": "https://ca.slack-edge.com/E09V59WQY1E-U09CY2QAZMJ-09090f790fd5-512",
+      "roles": ["Lead", "Tech", "Web"],
+      "link": "https://tonymac.net"
+    },
+    {
+      "id": 1,
+      "name": "Aiden Holbert",
+      "image": "https://ca.slack-edge.com/E09V59WQY1E-U0A4QG5JTGX-2cc700e5cbb2-512",
+      "roles": ["Tech", "Web", "Mentor"],
+      "link": "https://aidnpatrick.github.io/cubey-official-website/home.html"
+    },
+    {
+      "id": 2,
+      "name": "Philip Amador",
+      "image": "https://ca.slack-edge.com/E09V59WQY1E-U0AS4CD9VN2-g26cdb0735e4-512",
+      "roles": ["Tech", "Marketing"]
+    },
+    {
+      "id": 3,
+      "name": "Junseo Yoo",
+      "image": "https://ca.slack-edge.com/E09V59WQY1E-U0AG9Q6E2ER-gb5a2ee789c5-512",
+      "roles": ["Design", "Web"]
+    },
+    {
+      "id": 4,
+      "name": "Jalal Muhammad",
+      "image": "https://ca.slack-edge.com/E09V59WQY1E-U0A3RGEEYDD-0b7f823e62d9-512",
+      "roles": ["Finance", "Marketing"]
+    },
+    {
+      "id": 5,
+      "name": "Finnegan Adair",
+      "image": "https://ca.slack-edge.com/E09V59WQY1E-U0ART1DSNKX-g37a81f0b164-512",
+      "roles": ["Tech", "Web"]
+    }
+  ]
+}

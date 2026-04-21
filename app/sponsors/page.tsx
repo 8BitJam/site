@@ -31,7 +31,7 @@ function Page() {
         title="SPONSORS"
         description="Check out our amazing sponsors, it's thanks to them that 8-Bit Jam is a reality!"
       />
-      <div className="flex flex-col gap-y-10 pb-15">
+      <div className="flex flex-col gap-y-5 lg:gap-y-10 pb-15">
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
           GOLD TIER
         </h2>
