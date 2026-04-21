@@ -1,3 +1,4 @@
+import { saveEmail } from "./actions";
 import { FaLocationDot, FaCalendar } from "react-icons/fa6";
 import Form from "./Form";
 import Image from "next/image";
@@ -23,7 +24,7 @@ function Hero() {
             HERNDON, VIRGINIA
           </div>
         </div>
-        <Form />
+        <Form saveEmail={saveEmail} />
       </div>
       <Image
         src="/logo.png"

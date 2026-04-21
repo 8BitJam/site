@@ -4,16 +4,23 @@ import { useState } from "react";
 import Input from "../ui/Input";
 import Btn from "../ui/Btn";
 
-function Form() {
+function Form({
+  saveEmail,
+}: {
+  saveEmail: (email: string) => Promise<object>;
+}) {
   const [email, setEmail] = useState<string>("");
   const [success, setSuccess] = useState<boolean>(false);
 
-  function handleSubmit(e: React.SubmitEvent) {
+  async function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
     if (!success) {
-      console.log(email);
-      setSuccess(true);
-      //TODO: call server action here
+      const res = await saveEmail(email);
+      if (!res.success) {
+        alert(res.message);
+      } else {
+        setSuccess(true);
+      }
     }
   }
 
@@ -25,6 +32,8 @@ function Form() {
           placeholder="hello@8bitjam.win"
           value={email}
           setValue={setEmail}
+          email
+          disabled={success}
         />
         <div className="text-xs text-gray-400 font-inter max-w-100">
           Limited spots available, this is just an interest RSVP form and not

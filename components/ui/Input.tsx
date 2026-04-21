@@ -4,12 +4,15 @@ interface InputProps {
   placeholder: string;
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
+  email?: boolean;
+  disabled?: boolean;
 }
 
-function Input({ placeholder, value, setValue }: InputProps) {
+function Input({ placeholder, value, setValue, email, disabled }: InputProps) {
   return (
     <input
-      type="text"
+      type={email ? "email" : "text"}
+      disabled={disabled || false}
       placeholder={placeholder}
       value={value}
       onChange={(e) => setValue(e.target.value)}

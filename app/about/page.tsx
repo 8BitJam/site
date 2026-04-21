@@ -46,9 +46,15 @@ function Page() {
           of 2-4 of your friends, build a game, submit it to one of our
           categories, and win prizes completely for free! Enjoy food,
           mini-games/tournaments, sidequests, and more at this memorable event.
-          Fill out the interest <Link href="/">form</Link> with your email now,
-          or read the <Link href="/faq">FAQ</Link> for more specific
-          information.
+          Fill out the interest{" "}
+          <Link href="/" className="underline">
+            form
+          </Link>{" "}
+          with your email now, or read the{" "}
+          <Link href="/faq" className="underline">
+            FAQ
+          </Link>{" "}
+          for more specific information.
         </p>
       </div>
       <div className="flex flex-col gap-y-5 lg:gap-y-10 pb-15">
