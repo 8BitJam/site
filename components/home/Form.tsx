@@ -1,5 +1,6 @@
 "use client";
 
+import type { ActionResponseType } from "@/types/user";
 import { useState } from "react";
 import Input from "../ui/Input";
 import Btn from "../ui/Btn";
@@ -7,7 +8,7 @@ import Btn from "../ui/Btn";
 function Form({
   saveEmail,
 }: {
-  saveEmail: (email: string) => Promise<object>;
+  saveEmail: (email: string) => Promise<ActionResponseType>;
 }) {
   const [email, setEmail] = useState<string>("");
   const [success, setSuccess] = useState<boolean>(false);

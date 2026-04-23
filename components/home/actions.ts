@@ -1,8 +1,9 @@
 "use server";
 
+import type { ActionResponseType } from "@/types/user";
 import { prisma } from "@/lib/prisma";
 
-export async function saveEmail(email: string) {
+export async function saveEmail(email: string): Promise<ActionResponseType> {
   try {
     const newEmail = await prisma.person.create({ data: { email: email } });
     return {

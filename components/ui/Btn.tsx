@@ -9,10 +9,11 @@ interface BtnProps {
   color?: string;
   primary?: boolean;
   submit?: boolean;
+  full?: boolean;
 }
 
-function Btn({ href, onclick, text, color, primary, submit }: BtnProps) {
-  const btnStyles = `w-fit cursor-pointer text-gray-300 font-jersey bg-transparent text-2xl px-4 py-1 ${color || "hover:bg-blue-950"} border-2 border-transparent hover:border-gray-700 ${primary && "border-gray-500! bg-blue-700! hover:bg-blue-800!"}`;
+function Btn({ href, onclick, text, color, primary, submit, full }: BtnProps) {
+  const btnStyles = `w-fit cursor-pointer text-gray-300 font-jersey bg-transparent text-2xl px-4 py-1 ${color || "hover:bg-blue-950"} border-2 border-transparent hover:border-gray-700 ${primary && "border-gray-500! bg-blue-700! hover:bg-blue-800!"} ${full && "w-full"}`;
 
   return href ? (
     <Link href={href} className={btnStyles}>

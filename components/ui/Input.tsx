@@ -1,17 +1,27 @@
 "use client";
 
-interface InputProps {
+type InputProps = {
   placeholder: string;
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setValue:
+    | React.Dispatch<React.SetStateAction<string>>
+    | ((newVal: string) => void);
   email?: boolean;
+  password?: boolean;
   disabled?: boolean;
-}
+};
 
-function Input({ placeholder, value, setValue, email, disabled }: InputProps) {
+function Input({
+  placeholder,
+  value,
+  setValue,
+  email,
+  password,
+  disabled,
+}: InputProps) {
   return (
     <input
-      type={email ? "email" : "text"}
+      type={email ? "email" : password ? "password" : "text"}
       disabled={disabled || false}
       placeholder={placeholder}
       value={value}
