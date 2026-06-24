@@ -54,7 +54,7 @@ function Page() {
           </li>
           <li>
             Participants are required to remain inside the venue for the
-            duration of the event for security reasons{" "}
+            duration of the event
           </li>
           <li>No excessive noise or horseplay</li>
           <li>No photography without the organizers’ permission</li>
@@ -86,8 +86,8 @@ function Page() {
           <li>Sprites and artwork have to be original and human-made</li>
           <li>Code has to be readable, clear, and human-made</li>
           <li>
-            AI is only allowed for debugging, and it has to be documented
-            specifically
+            AI is only allowed for debugging, and it has to be documented in
+            detail specifically
           </li>
           <li>
             Participants have to be able to explain their code and architecture
@@ -107,13 +107,18 @@ function Page() {
           <li>All game engines are allowed (including no engine)</li>
           <li>Participate in teams of 2-4</li>
           <li>Will have a teambuilding event for those without a team</li>
-          <li>6 minutes per team, one hour of judging in total</li>
+          <li>
+            6 minutes of presentation per team, 1 hour of judging in total
+          </li>
           <li>
             3 minutes presenting the game, 2 minutes explaining code, 1 minute
             answering questions
           </li>
-          <li>No slideshow, show us the game and code</li>
-          <li>One team will be selected for each of the 5 categories</li>
+          <li>No slideshow required, show us the game and code</li>
+          <li>
+            1 team will be selected for each of the 5 categories: overall,
+            simulation, innovation, style, and use of sponsor product
+          </li>
         </ul>
       </div>
     </div>
