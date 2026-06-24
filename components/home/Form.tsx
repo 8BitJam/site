@@ -38,7 +38,7 @@ function Form({
         />
         <div className="text-xs text-gray-400 font-inter max-w-100">
           Limited spots available, this is just an interest RSVP form and not
-          the actual registration that will open in late June.
+          the actual registration that will open in July.
         </div>
       </label>
       <div className="flex flex-col sm:flex-row gap-5">

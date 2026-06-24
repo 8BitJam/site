@@ -24,8 +24,8 @@ async function Nav() {
           <span className="block sm:hidden md:block">8-BIT JAM</span>
         </Link>
         <div className="hidden sm:flex md:gap-x-2 lg:gap-x-5 items-center">
-          {/* <Btn href="/schedule" text="SCHEDULE" />
-          <Btn href="/faq" text="FAQ" color="hover:bg-red-950" /> */}
+          {/* <Btn href="/schedule" text="SCHEDULE" />*/}
+          <Btn href="/rules" text="RULES" color="hover:bg-red-950" />
           <Btn href="/sponsors" text="SPONSORS" color="hover:bg-green-950" />
           <Btn href="/about" text="ABOUT" color="hover:bg-violet-950" />
           {session?.user ? (
