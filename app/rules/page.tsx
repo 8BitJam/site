@@ -35,6 +35,15 @@ function Page() {
       />
       <div className="flex flex-col gap-y-5 lg:gap-y-10 pb-15">
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
+          ELIGIBILITY
+        </h2>
+        <ul className={listStyles}>
+          <li>Current student from Northern Virginia</li>
+          <li>Everyone between the ages of 13-18 is welcome to participate</li>
+          <li>No experience in coding, game dev, or design is needed</li>
+          <li>Parental approval for attendance is required</li>
+        </ul>
+        <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
           GENERAL
         </h2>
         <ul className={listStyles}>
@@ -68,15 +77,6 @@ function Page() {
             disqualification based on severity at the discretion of the
             hackathon organizers
           </li>
-        </ul>
-        <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
-          ELIGIBILITY
-        </h2>
-        <ul className={listStyles}>
-          <li>Current student from Northern Virginia</li>
-          <li>Everyone between the ages of 13-18 is welcome to participate</li>
-          <li>No experience in coding, game dev, or design is needed</li>
-          <li>Parental approval for attendance is required</li>
         </ul>
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
           AI USAGE
