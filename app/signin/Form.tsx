@@ -35,7 +35,7 @@ function Form() {
 
   async function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
-    const { data } = await authClient.signUp.email(
+    await authClient.signUp.email(
       {
         email: user.email,
         password: user.password,
@@ -48,7 +48,6 @@ function Form() {
         },
       },
     );
-    console.log(data);
   }
 
   return (
