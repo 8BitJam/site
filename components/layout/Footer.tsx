@@ -59,7 +59,7 @@ function Footer() {
             GitHub
           </a>
           <a
-            href="https://hcb.hackclub.com/8BitJam"
+            href="https://hcb.hackclub.com/8bitjam"
             target="_blank"
             className={socialStyles}
           >

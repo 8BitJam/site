@@ -39,8 +39,8 @@ async function Page() {
       />
       <div className="w-[45%] mx-auto h-70 mb-15 flex justify-center items-center text-gray-300 text-center flex-col gap-y-5">
         Thanks for filling out the interest form (even if you didn&apos;t, you
-        did by signing up)! Registration for the hackathon will open in May, and
-        you can see more stuff here once you register :D
+        did by signing up)! Registration for the hackathon will open in July,
+        and you can see more stuff here once you register :D
         <SignOut />
       </div>
     </div>

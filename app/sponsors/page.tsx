@@ -33,26 +33,32 @@ function Page() {
       />
       <div className="flex flex-col gap-y-5 lg:gap-y-10 pb-15">
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
-          GOLD TIER
+          VENUE SPONSOR
         </h2>
         <div className="flex gap-5 flex-wrap justify-center">
           <Card empty />
         </div>
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
-          SILVER TIER
+          FINANCIAL SPONSORS
         </h2>
         <div className="flex gap-5 flex-wrap justify-center">
-          <Card empty />
           <Card empty />
           <Card empty />
         </div>
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
-          BRONZE TIER
+          PRIZE SPONSORS
         </h2>
         <div className="flex gap-5 flex-wrap justify-center">
-          <Card empty />
-          <Card empty />
-          <Card empty />
+          <Card
+            logo="/sponsors/CodeCrafters.svg"
+            name="CodeCrafters"
+            link="codecrafters.io"
+          />
+          <Card
+            logo="/sponsors/Aseprite.png"
+            name="Aseprite"
+            link="aseprite.com"
+          />
         </div>
       </div>
     </div>

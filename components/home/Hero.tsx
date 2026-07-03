@@ -1,5 +1,5 @@
 import { saveEmail } from "./actions";
-import { FaLocationDot, FaCalendar } from "react-icons/fa6";
+import { FaLocationDot, FaCalendar, FaTrophy } from "react-icons/fa6";
 import Form from "./Form";
 import Image from "next/image";
 
@@ -14,7 +14,11 @@ function Hero() {
           Join 50 other passionate high schoolers this summer for this in-person
           overnight game-themed hackathon!
         </p>
-        <div className="flex flex-col sm:flex-row gap-x-10 gap-y-5 md:items-center text-gray-300 font-jersey text-2xl">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-x-10 gap-y-3 w-[80%] md:items-center text-gray-300 font-jersey text-2xl">
+          <div className="flex items-center gap-x-3">
+            <FaTrophy size={25} />
+            $5,000+ IN PRIZES
+          </div>
           <div className="flex items-center gap-x-3">
             <FaCalendar size={25} />
             AUGUST 8-9TH, 2026
