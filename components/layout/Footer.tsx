@@ -35,7 +35,7 @@ function Footer() {
         </div>
         <div className="text-gray-300 text-xs flex gap-x-10">
           <a
-            href="https://instagram.com/8-BitJam"
+            href="https://instagram.com/8_bitjam"
             target="_blank"
             className={socialStyles}
           >
@@ -43,7 +43,7 @@ function Footer() {
             Instagram
           </a>
           <a
-            href="https://tiktok.com/@8-BitJam"
+            href="https://tiktok.com/@8_bitjam"
             target="_blank"
             className={socialStyles}
           >
