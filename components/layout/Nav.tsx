@@ -25,7 +25,7 @@ async function Nav() {
           />{" "}
           <span className="block sm:hidden md:block">8-BIT JAM</span>
         </Link>
-        <div className="hidden sm:flex md:gap-x-2 lg:gap-x-5 items-center">
+        <div className="hidden sm:flex md:gap-x-1 items-center">
           <Btn href="/about" text="ABOUT" color="hover:bg-violet-950" />
           <Btn href="/schedule" text="SCHEDULE" color="hover:bg-orange-950" />
           <Btn href="/rules" text="RULES" color="hover:bg-red-950" />

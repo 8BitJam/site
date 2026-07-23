@@ -10,15 +10,17 @@
 
 ![Website homepage screenshot](/public/banner.png)
 
-This is a retro 8-bit-themed landing website for the game hackathon, 8-Bit Jam, I’m hosting this August! You can register, check out the schedule, and learn more about the event on this website. 8-Bit Jam is a fun and unique hackathon happening this summer in Herndon, Virginia that's focused on game dev, with fun challenges, sidequests, and even game tournaments to make this the most fun and memorable hackathon you've ever attended! This landing page is meant to answer all your questions about the hackathon, as well as providing a place for you to fill out the interest RSVP form and register for an account early. Since this is a game jam focused around the number 8 (hence the octopus), I decided to go with this cool 8-bit design style to make the website fit the event better and have a fun personality.
+This is a retro 8-bit-themed landing website for the game hackathon, 8-Bit Jam, I’m hosting this August! You can register, check out the schedule, and learn more about the event on this website. 8-Bit Jam is a fun and unique hackathon happening this summer in Great Falls, Virginia that's focused on game dev, with fun challenges, sidequests, and even game tournaments to make this the most fun and memorable hackathon you've ever attended! This landing page is meant to answer all your questions about the hackathon, as well as providing a place for you to register and sign up for an account on the website. Since this is a game jam focused around the number 8 (hence the octopus), I decided to go with this cool 8-bit design style to make the website fit the event better and have a fun personality.
 
 ## Pages
 
-- Homepage: hero section with interest form, about info, and interactive cards
-- Sponsors: a page for sponsors to reach out and be displayed (temporary placeholders)
-- About: about the hackathon, more info, and the team
+- Homepage: hero section with call to action buttons, about info, and interactive cards
+- About: about the hackathon, the team, and the judges
+- Schedule: a detailed time table for the event's specific activities
+- Rules: general, eligibility, participation, and project submission guidelines
+- Sponsors: a page that displays our venue, financial, and prize sponsors
 - Sign in: sign up/sign in to an account
-- Dashboard: place to manage your account and registration
+- Dashboard: place to manage your account, registration, and project
 
 ## Tech stack
 

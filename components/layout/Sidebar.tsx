@@ -37,15 +37,21 @@ function Sidebar() {
       />
       {open && (
         <div className="flex flex-col gap-y-5 fixed top-0 left-0 h-screen z-30 bg-gray-950 p-10 border-r-2 border-r-gray-700 overflow-auto">
-          {/* <Btn href="/schedule" text="SCHEDULE" />*/}
+          <Btn
+            href="https://forms.gle/HiKE87KTgp5hzoWU7"
+            text="REGISTER"
+            primary
+            blank
+          />
+          {session?.user ? (
+            <Btn href="/dashboard" text="DASHBOARD" />
+          ) : (
+            <Btn href="/signin" text="SIGN UP" />
+          )}
+          <Btn href="/about" text="ABOUT" color="hover:bg-violet-950" />
+          <Btn href="/schedule" text="SCHEDULE" color="hover:bg-orange-950" />
           <Btn href="/rules" text="RULES" color="hover:bg-red-950" />
           <Btn href="/sponsors" text="SPONSORS" color="hover:bg-green-950" />
-          <Btn href="/about" text="ABOUT" color="hover:bg-violet-950" />
-          {session?.user ? (
-            <Btn href="/dashboard" text="DASHBOARD" primary />
-          ) : (
-            <Btn href="/signin" text="SIGN UP" primary />
-          )}
         </div>
       )}
     </div>

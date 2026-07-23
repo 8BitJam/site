@@ -37,15 +37,21 @@ async function Page() {
         title="DASHBOARD"
         description="This is your personal dashboard, where you can manage your 8-Bit Jam participant registration info and more!"
       />
-      <div className="w-[45%] mx-auto h-70 mb-15 flex justify-center items-center text-gray-300 text-center flex-col gap-y-5">
-        Thanks for creating an account for 8-Bit Jam! Make sure you&apos;ve also
-        filled out the{" "}
-        <a href="https://forms.gle/HiKE87KTgp5hzoWU7" target="_blank">
-          registration form
-        </a>{" "}
-        as well in order to participate. You will see more stuff here once your
-        registration is confirmed :D (you&apos;ll receive an email about it with
-        further instructions)
+      <div className="w-[90%] sm:w-[60%] mx-auto mb-15 flex justify-center items-center text-gray-300 text-center flex-col gap-y-5">
+        <p>
+          Thanks for creating an account for 8-Bit Jam! Make sure you&apos;ve
+          also filled out the{" "}
+          <a
+            href="https://forms.gle/HiKE87KTgp5hzoWU7"
+            target="_blank"
+            className="underline"
+          >
+            registration form
+          </a>{" "}
+          as well in order to participate. You will see more stuff here once
+          your registration is confirmed :D (you&apos;ll receive an email about
+          it with further instructions)
+        </p>
         <SignOut />
       </div>
     </div>
