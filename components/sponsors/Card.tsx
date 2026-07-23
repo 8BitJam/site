@@ -24,13 +24,7 @@ function Card({ logo, name, link, empty }: CardProps) {
           at hello@8bitjam.win!
         </div>
       ) : (
-        <Image
-          src={logo!}
-          alt={name + " Logo"}
-          width={200}
-          height={200}
-          className="h-full"
-        />
+        <Image src={logo!} alt={name + " Logo"} width={200} height={200} />
       )}
     </a>
   );

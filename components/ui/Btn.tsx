@@ -10,13 +10,23 @@ interface BtnProps {
   primary?: boolean;
   submit?: boolean;
   full?: boolean;
+  blank?: boolean;
 }
 
-function Btn({ href, onclick, text, color, primary, submit, full }: BtnProps) {
+function Btn({
+  href,
+  onclick,
+  text,
+  color,
+  primary,
+  submit,
+  full,
+  blank,
+}: BtnProps) {
   const btnStyles = `w-fit cursor-pointer text-gray-300 font-jersey bg-transparent text-2xl px-4 py-1 ${color || "hover:bg-blue-950"} border-2 border-transparent hover:border-gray-700 ${primary && "border-gray-500! bg-blue-700! hover:bg-blue-800!"} ${full && "w-full"}`;
 
   return href ? (
-    <Link href={href} className={btnStyles}>
+    <Link href={href} className={btnStyles} target={blank ? "_blank" : "_self"}>
       {text}
     </Link>
   ) : (

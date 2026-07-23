@@ -38,9 +38,14 @@ async function Page() {
         description="This is your personal dashboard, where you can manage your 8-Bit Jam participant registration info and more!"
       />
       <div className="w-[45%] mx-auto h-70 mb-15 flex justify-center items-center text-gray-300 text-center flex-col gap-y-5">
-        Thanks for filling out the interest form (even if you didn&apos;t, you
-        did by signing up)! Registration for the hackathon will open in July,
-        and you can see more stuff here once you register :D
+        Thanks for creating an account for 8-Bit Jam! Make sure you&apos;ve also
+        filled out the{" "}
+        <a href="https://forms.gle/HiKE87KTgp5hzoWU7" target="_blank">
+          registration form
+        </a>{" "}
+        as well in order to participate. You will see more stuff here once your
+        registration is confirmed :D (you&apos;ll receive an email about it with
+        further instructions)
         <SignOut />
       </div>
     </div>

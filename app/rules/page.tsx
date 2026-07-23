@@ -38,7 +38,7 @@ function Page() {
           ELIGIBILITY
         </h2>
         <ul className={listStyles}>
-          <li>Current student from Northern Virginia</li>
+          <li>Current high school student in the US</li>
           <li>Everyone between the ages of 13-18 is welcome to participate</li>
           <li>No experience in coding, game dev, or design is needed</li>
           <li>Parental approval for attendance is required</li>
@@ -108,16 +108,26 @@ function Page() {
           <li>Participate in teams of 2-4</li>
           <li>Will have a teambuilding event for those without a team</li>
           <li>
-            6 minutes of presentation per team, 1 hour of judging in total
+            4 minutes of presentation per team, 30 minutes of judging in total
           </li>
           <li>
-            3 minutes presenting the game, 2 minutes explaining code, 1 minute
+            2 minutes presenting the game, 1 minute explaining code, 1 minute
             answering questions
+          </li>
+          <li>
+            2 teams will be presenting at the same time to different judges
           </li>
           <li>No slideshow required, show us the game and code</li>
           <li>
-            1 team will be selected for each of the 5 categories: overall,
-            simulation, innovation, style, and use of sponsor product
+            1 team will be selected for each of the 4 categories: overall,
+            innovation, simulation, and style
+          </li>
+          <li>
+            2 runner-up teams will be selected for an additional prize as well
+          </li>
+          <li>
+            A raffle will be hosted during the closing ceremony to give out
+            remaining prizes
           </li>
         </ul>
       </div>

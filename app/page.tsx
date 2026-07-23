@@ -1,13 +1,19 @@
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
-import { FaDollarSign, FaGift, FaTrophy } from "react-icons/fa";
+import {
+  FaDollarSign,
+  FaEnvelope,
+  FaGift,
+  FaTrophy,
+  FaUserCircle,
+} from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
 import { MdLeaderboard } from "react-icons/md";
 import { LuPartyPopper } from "react-icons/lu";
+import { SiGoogleforms } from "react-icons/si";
 import Hero from "@/components/home/Hero";
 import Card from "@/components/home/Card";
 import Header from "@/components/home/Header";
-import Btn from "@/components/ui/Btn";
 
 export default async function Home() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -18,7 +24,7 @@ export default async function Home() {
       <div className="flex flex-col gap-y-10 py-15">
         <Header
           title="FOR HIGH SCHOOLERS, BY HIGH SCHOOLERS"
-          description="We are a team of 6 high school students from Northern Virginia hosting a
+          description="We are a team of 4 high school students from Northern Virginia hosting a
         hackathon for 50 teens!"
         />
         <div className="flex gap-5 flex-wrap">
@@ -48,13 +54,13 @@ export default async function Home() {
           </Card>
           <Card
             title="DIVERSE CATEGORIES"
-            description="Enter your game for best overall, education, simulation, creative, graphics, or story category!"
+            description="Enter your game for best overall, innovation, simulation, or style category!"
           >
             <FaTrophy size={25} />
           </Card>
           <Card
             title="HAVE FUN"
-            description="Spend 20 memorable hours with your friends creating projects, playing games, and having fun!"
+            description="Spend 10 memorable hours with your friends creating projects, playing games, and having fun!"
           >
             <LuPartyPopper size={25} />
           </Card>
@@ -62,11 +68,31 @@ export default async function Home() {
         {!session && (
           <>
             <Header
-              title="CREATE AN ACCOUNT NOW"
-              description="Sign up for an account on the 8-Bit Jam website now by clicking on the link below! You can manage and customize your registration in the future on the dashboard page as well."
+              title="HOW DO I PARTICIPATE?"
+              description="Follow these 3 simple steps now to register and get ready before registration closes on 8/15 and you're all set!"
             />
-            <div className="flex justify-center">
-              <Btn href="/signin" text="SIGN UP" primary />
+            <div className="flex gap-5 flex-wrap">
+              <Card
+                title="1. SUBMIT REGISTRATION FORM"
+                description="Read the form description carefully for event details, fill out the participant information, sign and upload the liability and medical forms, and you'll be registered!"
+                link="https://forms.gle/HiKE87KTgp5hzoWU7"
+                blank
+              >
+                <SiGoogleforms size={30} />
+              </Card>
+              <Card
+                title="2. SIGN UP FOR AN ACCOUNT"
+                description="Use the same email and name you used for the registration form to sign up for an account on this website, since you'll be using it to manage your participant account and project!"
+                link="/signin"
+              >
+                <FaUserCircle size={30} />
+              </Card>
+              <Card
+                title="3. CHECK YOUR EMAIL"
+                description="Remember to regularly check the email you used to register and sign up for any instructions, updates, and reminders about 8-Bit Jam and your registration status!"
+              >
+                <FaEnvelope size={30} />
+              </Card>
             </div>
           </>
         )}

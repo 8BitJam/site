@@ -3,13 +3,11 @@ import NotFoundBtns from "./NotFoundBtns";
 
 export const metadata: Metadata = {
   title: "Game Over | 8-Bit Jam",
-  description:
-    "This site is still under construction, so that page doesn't exist yet...",
+  description: "Oops, that page doesn't exist...",
   authors: [{ name: "8-Bit Jam", url: "https://8bitjam.win" }],
   openGraph: {
     title: "Game Over | 8-Bit Jam",
-    description:
-      "This site is still under construction, so that page doesn't exist yet...",
+    description: "Oops, that page doesn't exist...",
     url: "https://8bitjam.win",
     siteName: "8-Bit Jam",
     images: [
@@ -29,10 +27,7 @@ function NotFound() {
       <h1 className="font-jersey text-9xl text-blue-600 pt-30 pb-15">
         GAME OVER
       </h1>
-      <p className="text-gray-300">
-        This site is still under construction, so that page doesn&apos;t exist
-        yet...
-      </p>
+      <p className="text-gray-300">Oops, that page doesn&apos;t exist...</p>
       <NotFoundBtns />
     </div>
   );

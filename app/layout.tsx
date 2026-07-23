@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Jersey_10 } from "next/font/google";
 import Nav from "@/components/layout/Nav";
+import Banner from "@/components/layout/Banner";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
@@ -16,12 +17,12 @@ const jersey = Jersey_10({
 export const metadata: Metadata = {
   title: "Home | 8-Bit Jam",
   description:
-    "Best game-themed hackathon in the DMV area taking place this August in Herndon, Virginia!",
+    "Best game-themed hackathon in the DMV area taking place this August in Great Falls, Virginia!",
   authors: [{ name: "8-Bit Jam", url: "https://8bitjam.win" }],
   openGraph: {
     title: "Home | 8-Bit Jam",
     description:
-      "Best game-themed hackathon in the DMV area taking place this August in Herndon, Virginia!",
+      "Best game-themed hackathon in the DMV area taking place this August in Great Falls, Virginia!",
     url: "https://8bitjam.win",
     siteName: "8-Bit Jam",
     images: [
@@ -47,6 +48,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Nav />
+        <Banner />
         {children}
         <Footer />
       </body>

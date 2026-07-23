@@ -6,11 +6,11 @@ import Image from "next/image";
 function Person({ person }: { person: PersonType }) {
   return (
     <div
-      className="text-blue-600 flex-1 flex gap-y-3 border-2 border-gray-700 min-w-80 p-5 cursor-pointer hover:bg-gray-900 gap-10"
+      className="text-blue-600 flex gap-y-3 border-2 border-gray-700 min-w-80 w-100 p-5 cursor-pointer hover:bg-gray-900 gap-10"
       onClick={() => person.link && window.open(person.link, "_blank")}
     >
       <Image
-        src={person.image}
+        src={person.image || "/avatar.svg"}
         alt={person.name + " Avatar"}
         width={100}
         height={100}

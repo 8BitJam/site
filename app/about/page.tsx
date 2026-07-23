@@ -6,6 +6,7 @@ import Person from "@/components/about/Person";
 import Link from "next/link";
 
 const teamData: PersonType[] = teamJson.team;
+const judgeData: PersonType[] = teamJson.judges;
 
 export const metadata: Metadata = {
   title: "About | 8-Bit Jam",
@@ -41,30 +42,65 @@ function Page() {
           WHAT IS 8-BIT JAM?
         </h2>
         <p className="text-gray-300 w-full lg:w-[70%] mx-auto">
-          8-Bit Jam is a hackathon/game jam happening on August 8-9th in
-          Herndon, Virginia for Fairfax County high school students! With a team
-          of 2-4 of your friends, build a game, submit it to one of our
+          8-Bit Jam is a hackathon/game jam happening on August 22nd in Great
+          Falls, Virginia for talented and passionate high school students! With
+          a team of 2-4 of your friends, build a game, submit it to one of our
           categories, and win prizes completely for free! Enjoy food,
-          mini-games/tournaments, sidequests, and more at this memorable event.
-          Fill out the interest{" "}
-          <Link href="/" className="underline">
+          mini-games/tournaments, sidequests, and more at this fun, memorable
+          10-hour event. Fill out the registration{" "}
+          <Link
+            href="https://forms.gle/HiKE87KTgp5hzoWU7"
+            className="underline"
+            target="_blank"
+          >
             form
           </Link>{" "}
-          with your email now, or read the{" "}
-          <Link href="/faq" className="underline">
-            FAQ
+          now to participate, or read the{" "}
+          <Link href="/schedule" className="underline">
+            schedule
           </Link>{" "}
-          for more specific information.
+          and{" "}
+          <Link href="/rules" className="underline">
+            rules
+          </Link>{" "}
+          for more event and participation information.
         </p>
       </div>
+      {/* TODO: add prizes here */}
       <div className="flex flex-col gap-y-5 lg:gap-y-10 pb-15">
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
           THE TEAM
         </h2>
-        <div className="flex gap-5 flex-wrap">
+        <div className="flex gap-5 flex-wrap justify-center">
           {teamData.map((person) => (
             <Person key={person.id} person={person} />
           ))}
+        </div>
+      </div>
+      <div className="flex flex-col gap-y-5 lg:gap-y-10 pb-15">
+        <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
+          JUDGES
+        </h2>
+        <div className="flex gap-5 flex-wrap justify-center">
+          {judgeData.map((person) => (
+            <Person key={person.id} person={person} />
+          ))}
+
+          <a
+            href="https://forms.gle/hLqAAtMkJVTMRTtz5"
+            target="_blank"
+            className="flex flex-col items-center gap-y-3 border-2 border-gray-700 min-w-80 w-100 p-5 cursor-pointer
+             hover:bg-gray-900"
+          >
+            <h2 className="text-blue-600 font-jersey font-bold text-3xl">
+              WANT TO BE A JUDGE?
+            </h2>
+            <p className="text-gray-300 text-center text-sm w-[90%]">
+              Please click on this card and fill out the 8-Bit Jam volunteering
+              form to express your interest, and we&apos;ll email you with more
+              information!
+            </p>
+          </a>
         </div>
       </div>
     </div>

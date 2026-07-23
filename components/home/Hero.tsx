@@ -1,6 +1,7 @@
 import { saveEmail } from "./actions";
 import { FaLocationDot, FaCalendar, FaTrophy } from "react-icons/fa6";
 import Form from "./Form";
+import Btn from "../ui/Btn";
 import Image from "next/image";
 
 function Hero() {
@@ -12,7 +13,7 @@ function Hero() {
         </h1>
         <p className="text-gray-300 text-lg max-w-130">
           Join 50 other passionate high schoolers this summer for this in-person
-          overnight game-themed hackathon!
+          10-hour game-themed hackathon!
         </p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-x-10 gap-y-3 w-[80%] md:items-center text-gray-300 font-jersey text-2xl">
           <div className="flex items-center gap-x-3">
@@ -21,14 +22,33 @@ function Hero() {
           </div>
           <div className="flex items-center gap-x-3">
             <FaCalendar size={25} />
-            AUGUST 8-9TH, 2026
+            AUGUST 22ND, 2026
           </div>
           <div className="flex items-center gap-x-3">
             <FaLocationDot size={25} />
-            HERNDON, VIRGINIA
+            GREAT FALLS, VIRGINIA
           </div>
         </div>
-        <Form saveEmail={saveEmail} />
+        {/* <Form saveEmail={saveEmail} /> */}
+        <div className="text-sm text-gray-400 font-inter max-w-100">
+          Registration closes August 15th, please register as early as you can
+          as the limited spots are first come, first served.
+        </div>
+        <div className="flex flex-col sm:flex-row gap-5">
+          <Btn
+            href="https://forms.gle/HiKE87KTgp5hzoWU7"
+            text="REGISTER NOW"
+            primary
+            blank
+          />
+          <Btn
+            href="https://forms.gle/hLqAAtMkJVTMRTtz5"
+            text="VOLUNTEERING FORM"
+            primary
+            blank
+          />
+          <Btn href="/about" text="LEARN MORE" />
+        </div>
       </div>
       <Image
         src="/logo.png"

@@ -29,14 +29,18 @@ function Page() {
     <div className="max-w-400 w-full px-5 md:px-15 lg:px-40 mx-auto">
       <Hero
         title="SPONSORS"
-        description="Check out our amazing sponsors, it's thanks to them that 8-Bit Jam is a reality!"
+        description="Check out our incredibly generous sponsors, it's thanks to them that 8-Bit Jam is a reality!"
       />
       <div className="flex flex-col gap-y-5 lg:gap-y-10 pb-15">
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
           VENUE SPONSOR
         </h2>
         <div className="flex gap-5 flex-wrap justify-center">
-          <Card empty />
+          <Card
+            logo="/sponsors/FCPL.png"
+            name="FCPL"
+            link="fairfaxcounty.gov/library/"
+          />
         </div>
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
           FINANCIAL SPONSORS
@@ -58,6 +62,12 @@ function Page() {
             logo="/sponsors/Aseprite.png"
             name="Aseprite"
             link="aseprite.com"
+          />
+          <Card logo="/sponsors/xyz.png" name=".xyz" link="gen.xyz" />
+          <Card
+            logo="/sponsors/SparkCloud.png"
+            name="SparkCloud"
+            link="cloud.sparkden.org"
           />
         </div>
       </div>

@@ -36,7 +36,7 @@ function Sidebar() {
         onClick={() => setOpen(true)}
       />
       {open && (
-        <div className="flex flex-col gap-y-5 absolute top-0 left-0 h-screen z-30 bg-gray-950 p-10 border-r-2 border-r-gray-700 overflow-auto">
+        <div className="flex flex-col gap-y-5 fixed top-0 left-0 h-screen z-30 bg-gray-950 p-10 border-r-2 border-r-gray-700 overflow-auto">
           {/* <Btn href="/schedule" text="SCHEDULE" />*/}
           <Btn href="/rules" text="RULES" color="hover:bg-red-950" />
           <Btn href="/sponsors" text="SPONSORS" color="hover:bg-green-950" />
