@@ -18,7 +18,7 @@ function Hero() {
         <div className="flex flex-col sm:flex-row flex-wrap gap-x-10 gap-y-3 w-[80%] md:items-center text-gray-300 font-jersey text-2xl">
           <div className="flex items-center gap-x-3">
             <FaTrophy size={25} />
-            $5,000+ IN PRIZES
+            $10,000+ IN PRIZES
           </div>
           <div className="flex items-center gap-x-3">
             <FaCalendar size={25} />

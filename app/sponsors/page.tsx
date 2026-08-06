@@ -59,6 +59,11 @@ function Page() {
             link="codecrafters.io"
           />
           <Card
+            logo="/sponsors/RiseResearch.png"
+            name="RISE Research"
+            link="riseglobaleducation.com/"
+          />
+          <Card
             logo="/sponsors/Aseprite.png"
             name="Aseprite"
             link="aseprite.com"

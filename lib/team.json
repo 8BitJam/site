@@ -43,7 +43,13 @@
       "id": 2,
       "name": "Mandar Chaudhari",
       "roles": ["Land IQ Software Engineer"],
-      "link":"https://www.linkedin.com/in/mandar-chaudhari-7a219a200/&source=gmail&ust=1783122369783000&sa=E"
+      "link":"https://www.linkedin.com/in/mandar-chaudhari-7a219a200/"
+    },
+    {
+      "id": 3,
+      "name": "Ruthuparna Naikar",
+      "roles": ["FIS AIML Engineer"],
+      "link":"https://www.linkedin.com/in/rnaikar/"
     }
   ]
 }
