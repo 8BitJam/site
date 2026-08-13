@@ -15,7 +15,7 @@ This is a retro 8-bit-themed landing website for the game hackathon, 8-Bit Jam, 
 ## Pages
 
 - Homepage: hero section with call to action buttons, about info, and interactive cards
-- About: about the hackathon, the team, and the judges
+- About: about the hackathon, prizes, the team, and the judges
 - Schedule: a detailed time table for the event's specific activities
 - Rules: general, eligibility, participation, and project submission guidelines
 - Sponsors: a page that displays our venue, financial, and prize sponsors

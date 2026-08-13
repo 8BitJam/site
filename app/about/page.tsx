@@ -2,6 +2,7 @@ import type { PersonType } from "@/types/team";
 import type { Metadata } from "next";
 import teamJson from "@/lib/team.json";
 import Hero from "@/components/layout/Hero";
+import Prize from "@/components/about/Prize";
 import Person from "@/components/about/Person";
 import Link from "next/link";
 
@@ -66,7 +67,42 @@ function Page() {
           for more event and participation information.
         </p>
       </div>
-      {/* TODO: add prizes here */}
+      <div className="flex flex-col gap-y-5 lg:gap-y-10 pb-15">
+        <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
+          PRIZES
+        </h2>
+        <div className="flex gap-5 flex-wrap justify-center">
+          <Prize
+            name="12x CodeCrafters Memberships"
+            link="app.codecrafters.io/pay?plans=true"
+            img="/sponsors/CodeCrafters.svg"
+            value={720}
+          />
+          <Prize
+            name="4x RISE Research Scholarships"
+            link="riseglobaleducation.com/"
+            img="/sponsors/RiseResearch.png"
+            value={1000}
+          />
+          <Prize
+            name="4x Aseprite Product Keys"
+            link="aseprite.org/buy/"
+            img="/sponsors/Aseprite.png"
+            value={20}
+          />
+          <Prize
+            name="8x .xyz Domains"
+            link="gen.xyz/register"
+            img="/sponsors/xyz.png"
+            value={15}
+          />
+          <Prize
+            name="Unlimited SparkCloud Domains"
+            link="cloud.sparkden.org/register"
+            img="/sponsors/SparkCloud.png"
+          />
+        </div>
+      </div>
       <div className="flex flex-col gap-y-5 lg:gap-y-10 pb-15">
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
           THE TEAM
@@ -85,7 +121,6 @@ function Page() {
           {judgeData.map((person) => (
             <Person key={person.id} person={person} />
           ))}
-
           <a
             href="https://forms.gle/hLqAAtMkJVTMRTtz5"
             target="_blank"
