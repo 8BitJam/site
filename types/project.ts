@@ -7,6 +7,7 @@ export type ProjectType = {
   description: string;
   instructions: string;
   banner: string;
+  bannerName: string;
   debug: DebugType[];
   team: string;
   teammates: string[];

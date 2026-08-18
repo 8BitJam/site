@@ -18,12 +18,13 @@ model User {
   email         String
   emailVerified Boolean   @default(false)
   image         String?
+  isJudge       Boolean   @default(false)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   sessions      Session[]
   accounts      Account[]
 
-  projects Project[]
+  projects Project[] //TODO: why is it plural? this should be a one to one relation
 
   @@unique([email])
   @@map("user")
@@ -86,6 +87,7 @@ model Project {
   description  String
   instructions String
   banner       String
+  bannerName   String   @default("image.png")
   team         String
   teammates    String[]
   submitted    Boolean  @default(false)

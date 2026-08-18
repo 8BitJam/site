@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "ca.slack-edge.com",
+        hostname: "**.***",
         port: "",
         pathname: "/**",
       },
