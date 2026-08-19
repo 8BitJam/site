@@ -31,25 +31,51 @@
       "id": 0,
       "name": "Ramandeep Arora",
       "roles": ["Stanley Black & Decker Software Engineer"],
-      "link": "https://www.linkedin.com/in/ramandeep-arora/"
+      "link": "https://www.linkedin.com/in/ramandeep-arora/",
+      "in-person": true
     },
     {
       "id": 1,
+      "name": "Ruthuparna Naikar",
+      "roles": ["FIS AIML Engineer"],
+      "link":"https://www.linkedin.com/in/rnaikar/",
+      "in-person": true
+    },
+    {
+      "id": 2,
       "name": "Shreyas Aswar",
       "roles": ["UC Davis Health Software Engineer"],
       "link":"https://www.linkedin.com/in/shreyasaswar"
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "Mandar Chaudhari",
       "roles": ["Land IQ Software Engineer"],
       "link":"https://www.linkedin.com/in/mandar-chaudhari-7a219a200/"
     },
     {
-      "id": 3,
-      "name": "Ruthuparna Naikar",
-      "roles": ["FIS AIML Engineer"],
-      "link":"https://www.linkedin.com/in/rnaikar/"
+      "id": 4,
+      "name": "Naga Deepak Pothuraju",
+      "roles": ["TikTok Senior Engineering Manager"],
+      "link":"https://www.linkedin.com/in/deppfx/"
+    },
+    {
+      "id": 5,
+      "name": "Axel Cassou",
+      "roles": ["HUD Research Engineer"],
+      "link":"https://www.linkedin.com/in/axel-cassou-a50280260/"
+    },
+    {
+      "id": 6,
+      "name": "Vincent Vu",
+      "roles": ["Paraform Software Engineer"],
+      "link":"https://www.linkedin.com/in/vmvu/"
+    },
+    {
+      "id": 7,
+      "name": "Sashank Agarwal",
+      "roles": ["NVIDIA Senior Cloud Engineer"],
+      "link":"https://www.linkedin.com/in/sashankagarwal/"
     }
   ]
 }

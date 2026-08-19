@@ -92,7 +92,7 @@ function Page() {
           <tr className="bg-gray-900">
             <td>12:00 - 1:00 PM</td>
             <td>60 minutes</td>
-            <td>Lunch break & movie (TBD)</td>
+            <td>Lunch break & movie (Spider-Man: No Way Home)</td>
           </tr>
           <tr className="bg-gray-900">
             <td>1:30 - 2:00 PM</td>
@@ -108,11 +108,6 @@ function Page() {
             <td>3:30 - 4:00 PM</td>
             <td>30 minutes</td>
             <td>Workshop: mentor experience & advice</td>
-          </tr>
-          <tr className="bg-gray-900">
-            <td>4:30 - 5:00 PM</td>
-            <td>30 minutes</td>
-            <td>Sidequest: TBD</td>
           </tr>
           <tr className="bg-gray-900">
             <td>5:00 - 5:15 PM</td>

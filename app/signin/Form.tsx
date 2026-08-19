@@ -21,6 +21,8 @@ function Form() {
     password: "",
   });
   const [loading, setLoading] = useState<string | null>(null);
+  const [signing, setSigning] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSignIn(provider: string) {
     setLoading(provider);
@@ -35,19 +37,44 @@ function Form() {
 
   async function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
-    await authClient.signUp.email(
-      {
-        email: user.email,
-        password: user.password,
-        name: user.username,
-        callbackURL: "/dashboard",
-      },
-      {
-        onSuccess: () => {
-          window.location.reload();
-        },
-      },
+    setError(null);
+    setSigning(true);
+    const res = await fetch(`/api/auth/email?q=${user.email}`).then((r) =>
+      r.json(),
     );
+    if (res.success) {
+      if (res.existing) {
+        await authClient.signIn.email(
+          { email: user.email, password: user.password },
+          {
+            onError: (ctx) => setError(ctx.error.message),
+            onSuccess: () => window.location.reload(),
+          },
+        );
+      } else {
+        await authClient.signUp.email(
+          {
+            email: user.email,
+            password: user.password,
+            name: user.username,
+            callbackURL: "/dashboard",
+          },
+          {
+            onError: (ctx) => {
+              setError(ctx.error.message);
+            },
+            onSuccess: () => {
+              window.location.reload();
+            },
+          },
+        );
+      }
+    } else {
+      setError(
+        "Something went wrong, please try again with the correct credentials",
+      );
+    }
+    setSigning(false);
   }
 
   return (
@@ -88,7 +115,8 @@ function Form() {
             password
           />
         </label>
-        <Btn text="SIGN IN" primary submit full />
+        {error && <div className="text-red-500 text-sm">{error}</div>}
+        <Btn text={signing ? "LOADING..." : "SIGN IN"} primary submit full />
       </div>
       <div className="w-full relative h-0.5 bg-gray-700">
         <div className="text-gray-300 text-center absolute left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] px-4 bg-gray-950">

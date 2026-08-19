@@ -31,7 +31,7 @@ function Hero() {
         </div>
         {/* <Form saveEmail={saveEmail} /> */}
         <div className="text-sm text-gray-400 font-inter max-w-100">
-          Registration closes August 15th, please register as early as you can
+          Registration closes August 21st, please register as early as you can
           as the limited spots are first come, first served.
         </div>
         <div className="flex flex-col sm:flex-row gap-5">

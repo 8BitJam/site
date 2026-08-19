@@ -121,7 +121,7 @@ function Page() {
           {judgeData.map((person) => (
             <Person key={person.id} person={person} />
           ))}
-          <a
+          {/* <a
             href="https://forms.gle/hLqAAtMkJVTMRTtz5"
             target="_blank"
             className="flex flex-col items-center gap-y-3 border-2 border-gray-700 min-w-80 w-100 p-5 cursor-pointer
@@ -135,7 +135,7 @@ function Page() {
               form to express your interest, and we&apos;ll email you with more
               information!
             </p>
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
