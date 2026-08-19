@@ -5,26 +5,30 @@
       "name": "Tony Hsu",
       "image": "https://ca.slack-edge.com/E09V59WQY1E-U09CY2QAZMJ-09090f790fd5-512",
       "roles": ["Team Lead"],
-      "link": "https://tonymac.net"
+      "link": "https://tonymac.net",
+      "isTeam":true
     },
     {
       "id": 1,
       "name": "Philip Amador",
       "image": "https://ca.slack-edge.com/E09V59WQY1E-U0AS4CD9VN2-g26cdb0735e4-512",
-      "roles": ["Marketing Manager"]
+      "roles": ["Marketing Manager"],
+      "isTeam":true
     },
     {
       "id": 2,
       "name": "Jalal Muhammad",
       "image": "https://ca.slack-edge.com/E09V59WQY1E-U0A3RGEEYDD-0b7f823e62d9-512",
-      "roles": ["Finance Manager"]
+      "roles": ["Finance Manager"],
+      "isTeam":true
     },
     {
       "id": 3,
       "name": "Aiden Holbert",
       "image": "https://ca.slack-edge.com/E09V59WQY1E-U0A4QG5JTGX-2cc700e5cbb2-512",
       "roles": ["Technology Manager"],
-      "link": "https://aidnpatrick.github.io/cubey-official-website/home.html"
+      "link": "https://aidnpatrick.github.io/cubey-official-website/home.html",
+      "isTeam":true
     }
   ],"judges": [
     {
@@ -32,50 +36,50 @@
       "name": "Ramandeep Arora",
       "roles": ["Stanley Black & Decker Software Engineer"],
       "link": "https://www.linkedin.com/in/ramandeep-arora/",
-      "in-person": true
+      "inPerson": true
     },
     {
       "id": 1,
       "name": "Ruthuparna Naikar",
       "roles": ["FIS AIML Engineer"],
       "link":"https://www.linkedin.com/in/rnaikar/",
-      "in-person": true
+      "inPerson": true
     },
     {
       "id": 2,
+      "name": "Sashank Agarwal",
+      "roles": ["NVIDIA Senior Cloud Engineer"],
+      "link":"https://www.linkedin.com/in/sashankagarwal/"
+    },
+    {
+      "id": 3,
       "name": "Shreyas Aswar",
       "roles": ["UC Davis Health Software Engineer"],
       "link":"https://www.linkedin.com/in/shreyasaswar"
     },
     {
-      "id": 3,
-      "name": "Mandar Chaudhari",
-      "roles": ["Land IQ Software Engineer"],
-      "link":"https://www.linkedin.com/in/mandar-chaudhari-7a219a200/"
-    },
-    {
       "id": 4,
-      "name": "Naga Deepak Pothuraju",
-      "roles": ["TikTok Senior Engineering Manager"],
-      "link":"https://www.linkedin.com/in/deppfx/"
-    },
-    {
-      "id": 5,
       "name": "Axel Cassou",
       "roles": ["HUD Research Engineer"],
       "link":"https://www.linkedin.com/in/axel-cassou-a50280260/"
     },
     {
+      "id": 5,
+      "name": "Mandar Chaudhari",
+      "roles": ["Land IQ Software Engineer"],
+      "link":"https://www.linkedin.com/in/mandar-chaudhari-7a219a200/"
+    },
+    {
       "id": 6,
-      "name": "Vincent Vu",
-      "roles": ["Paraform Software Engineer"],
-      "link":"https://www.linkedin.com/in/vmvu/"
+      "name": "Naga Deepak Pothuraju",
+      "roles": ["TikTok Senior Engineering Manager"],
+      "link":"https://www.linkedin.com/in/deppfx/"
     },
     {
       "id": 7,
-      "name": "Sashank Agarwal",
-      "roles": ["NVIDIA Senior Cloud Engineer"],
-      "link":"https://www.linkedin.com/in/sashankagarwal/"
+      "name": "Vincent Vu",
+      "roles": ["Paraform Software Engineer"],
+      "link":"https://www.linkedin.com/in/vmvu/"
     }
   ]
 }

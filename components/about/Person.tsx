@@ -6,7 +6,7 @@ import Image from "next/image";
 function Person({ person }: { person: PersonType }) {
   return (
     <div
-      className="text-blue-600 flex gap-y-3 border-2 border-gray-700 min-w-80 w-100 p-5 cursor-pointer hover:bg-gray-900 gap-10"
+      className="text-blue-600 flex gap-y-3 border-2 border-gray-700 min-w-80 w-120 p-5 cursor-pointer hover:bg-gray-900 gap-10"
       onClick={() => person.link && window.open(person.link, "_blank")}
     >
       <Image
@@ -20,6 +20,11 @@ function Person({ person }: { person: PersonType }) {
         <h2 className="font-jersey font-bold text-3xl">
           {person.name.toUpperCase()}
         </h2>
+        {!person.isTeam && (
+          <div className="border-2 border-gray-700 text-sm text-gray-300 px-2 py-1 w-fit">
+            {person.inPerson ? "In-Person" : "Remote"} Judge
+          </div>
+        )}
         <div className="flex gap-3 flex-wrap">
           {person.roles.map((role, i) => (
             <div

@@ -4,4 +4,6 @@ export interface PersonType {
   image?: string;
   roles: string[];
   link?: string;
+  isTeam?: boolean;
+  inPerson?: boolean;
 }
