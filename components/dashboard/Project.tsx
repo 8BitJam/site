@@ -46,7 +46,7 @@ function Project({ project }: { project: ProjectType }) {
       </div>
       <div className="text-gray-300 text-sm">
         {project.description.slice(0, 50) +
-          (project.description.length > 50 && "...")}
+          (project.description.length > 50 ? "..." : "")}
       </div>
     </Link>
   );

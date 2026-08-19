@@ -33,6 +33,8 @@ async function Page() {
   const session = await auth.api.getSession({ headers: await headers() });
   //TODO: add time check here too
   if (!session) redirect("/signin");
+  const user = await prisma.user.findUnique({ where: { id: session.user.id } });
+  if (user?.isJudge) redirect("/dashboard");
   const existingProject = (await prisma.project.findUnique({
     where: { ownerId: session.user.id },
     include: { debug: true },

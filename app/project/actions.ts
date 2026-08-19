@@ -10,7 +10,7 @@ export async function saveProject(project: ProjectType) {
   try {
     const session = await auth.api.getSession({ headers: await headers() });
     if (session) {
-      await prisma.project.upsert({
+      const updatedProject = await prisma.project.upsert({
         where: { id: project.id, ownerId: session.user.id },
         update: {
           ...project,
@@ -35,7 +35,7 @@ export async function saveProject(project: ProjectType) {
         },
       });
       revalidatePath("/project");
-      return { success: true };
+      return { success: true, id: updatedProject.id };
     }
     return {
       success: false,

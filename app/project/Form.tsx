@@ -4,11 +4,13 @@ import type { DebugType, ProjectType } from "@/types/project";
 import { useState, useEffect } from "react";
 import { types } from "@/lib/constants";
 import { saveProject, debugLog, submitProject } from "./actions";
+import { LuPartyPopper } from "react-icons/lu";
 import Upload from "@/components/project/Upload";
 import Input from "@/components/ui/Input";
 import Btn from "@/components/ui/Btn";
-import { LuPartyPopper } from "react-icons/lu";
 import Image from "next/image";
+import Log from "@/components/project/Log";
+import Textarea from "@/components/ui/Textarea";
 
 const labelStyles =
   "flex flex-col gap-y-1 font-jersey text-gray-300 text-2xl w-full";
@@ -23,7 +25,7 @@ interface FormProps {
 function Form({ existing, rating }: FormProps) {
   const [state, setState] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [logEntry, setLogEntry] = useState<DebugType>(emptyLog);
+  const [logEntry, setLogEntry] = useState<DebugType | null>(null);
   const [project, setProject] = useState<ProjectType>(
     existing || {
       id: "",
@@ -51,18 +53,23 @@ function Form({ existing, rating }: FormProps) {
   }, [existing]);
 
   async function handleLog() {
-    const newLog = {
-      ...logEntry,
-      id: crypto.randomUUID(),
-      createdAt: new Date(),
-    };
-    // setProject({
-    //   ...project,
-    //   debug: [...project.debug, newLog],
-    // });
-    setLogEntry(emptyLog);
-    await debugLog(newLog, project.id);
-    // await handleSave();
+    if (logEntry) {
+      const newLog = {
+        ...logEntry,
+        id: crypto.randomUUID(),
+        createdAt: new Date(),
+      };
+      // setProject({
+      //   ...project,
+      //   debug: [...project.debug, newLog],
+      // });
+      setLogEntry(null);
+      const res = await saveProject(project);
+      if (res && res.success) {
+        await debugLog(newLog, res.id!);
+        // await handleSave();
+      }
+    }
   }
 
   async function handleSubmit() {
@@ -141,13 +148,14 @@ function Form({ existing, rating }: FormProps) {
               *
             </span>
           </div>
-          <Input
+          <Textarea
             placeholder="Minecraft is a very fun game"
             value={project.description}
             setValue={(description: string) =>
               setProject({ ...project, description })
             }
             disabled={project.submitted}
+            styles="text-2xl!"
           />
         </label>
         <label className={labelStyles}>
@@ -157,13 +165,14 @@ function Form({ existing, rating }: FormProps) {
               *
             </span>
           </div>
-          <Input
+          <Textarea
             placeholder="WASD to move, space to jump..."
             value={project.instructions}
             setValue={(instructions: string) =>
               setProject({ ...project, instructions })
             }
             disabled={project.submitted}
+            styles="text-2xl!"
           />
         </label>
         <label className={labelStyles}>
@@ -275,44 +284,34 @@ function Form({ existing, rating }: FormProps) {
         <div className={labelStyles}>
           AI usage log
           <div className="flex flex-col gap-y-3">
-            <div className="flex gap-x-3">
-              <div className="flex-3">Description</div>
-              <div className="flex-1">Agent</div>
-              <div className="flex-1">Time</div>
-            </div>
-            {project.debug.length > 0 ? (
-              project.debug.map((item, i) => (
-                <div key={i} className="flex gap-x-3">
-                  <div className="flex-3">{item.description}</div>
-                  <div className="flex-1">{item.agent}</div>
-                  <div className="flex-1" title={item.createdAt.toISOString()}>
-                    {item.createdAt.getHours().toString().padStart(2, "0")}:
-                    {item.createdAt.getMinutes().toString().padStart(2, "0")}
-                  </div>
+            <Log debug={project.debug} />
+            {!project.submitted &&
+              (logEntry ? (
+                <div>
+                  <Input
+                    placeholder="I used AI to debug..."
+                    value={logEntry.description}
+                    setValue={(description: string) =>
+                      setLogEntry({ ...logEntry, description })
+                    }
+                  />
+                  <Input
+                    placeholder="Claude Code"
+                    value={logEntry.agent}
+                    setValue={(agent: string) =>
+                      setLogEntry({ ...logEntry, agent })
+                    }
+                  />
+                  <Btn text="Log entry" onclick={handleLog} primary />
+                  <Btn text="Cancel" onclick={() => setLogEntry(null)} />
                 </div>
-              ))
-            ) : (
-              <div className="py-2 text-xl text-center">No entries logged</div>
-            )}
-            {!project.submitted && (
-              <div>
-                <Input
-                  placeholder="I used AI to debug..."
-                  value={logEntry.description}
-                  setValue={(description: string) =>
-                    setLogEntry({ ...logEntry, description })
-                  }
+              ) : (
+                <Btn
+                  text="Add entry"
+                  onclick={() => setLogEntry(emptyLog)}
+                  primary
                 />
-                <Input
-                  placeholder="Claude Code"
-                  value={logEntry.agent}
-                  setValue={(agent: string) =>
-                    setLogEntry({ ...logEntry, agent })
-                  }
-                />
-                <Btn text="Log entry" onclick={handleLog} />
-              </div>
-            )}
+              ))}
           </div>
         </div>
       </div>
