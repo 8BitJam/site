@@ -62,6 +62,7 @@ function Upload({ setProject, existing, disabled }: UploadProps) {
         <>
           <FaUpload size={50} />
           Upload a banner image for your game!
+          <span className="text-lg">Recommended aspect ratio is 16:9</span>
         </>
       )}
     </label>

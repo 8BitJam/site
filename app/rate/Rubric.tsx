@@ -4,18 +4,29 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Btn from "@/components/ui/Btn";
 import Textarea from "@/components/ui/Textarea";
+import { submitRating } from "./actions";
 
 const criteria = ["Impact", "Technicality", "Innovation", "Style", "Overall"];
+const submitError =
+  "Please make sure you've rated each category and provided at least 30 words of feedback for this project!";
 
-function Rubric() {
+function Rubric({ projectId }: { projectId: string }) {
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [ratings, setRatings] = useState<number[]>([0, 0, 0, 0, 0]);
   const [feedback, setFeedback] = useState<string>("");
+  const [error, setError] = useState<string | null>(null);
+  const feedbackLength = feedback.trim().replace(/\s+/g, " ").split(" ").length;
 
   async function handleSubmit() {
-    setSubmitting(true);
-    console.log("Submit");
-    setSubmitting(false);
+    setError(null);
+    if (ratings.every((r) => r > 0) && feedbackLength >= 30) {
+      setSubmitting(true);
+      const res = await submitRating(ratings, feedback, projectId);
+      if (!res) setError(submitError);
+      setSubmitting(false);
+    } else {
+      setError(submitError);
+    }
   }
 
   return (
@@ -31,7 +42,7 @@ function Rubric() {
                 key={index}
                 className="text-gray-300 text-lg font-bold flex flex-col gap-y-1"
               >
-                {c}
+                {c} {ratings[index] > 0 && `(${ratings[index]}/10)`}
                 <div className="flex gap-x-2">
                   {Array(10)
                     .fill(0)
@@ -63,13 +74,22 @@ function Rubric() {
           <div className="text-gray-300 text-lg font-bold flex flex-col gap-y-3 w-full">
             Feedback
             <Textarea
-              placeholder="Justify your ratings and provide constructive feedback here"
+              placeholder="Justify your ratings and provide constructive feedback here in at least 30 words"
               value={feedback}
               setValue={(f: string) => setFeedback(f)}
             />
+            <div
+              className={`text-xs font-normal ${
+                feedbackLength >= 30 ? "text-green-600" : ""
+              }`}
+            >
+              {feedback.trim().length === 0 ? "0" : feedbackLength}
+              /30
+            </div>
           </div>
         </div>
       </div>
+      {error && <div className="text-red-500 text-center">{error}</div>}
       <Btn
         text={submitting ? "Submitting..." : "Submit Ratings"}
         onclick={handleSubmit}

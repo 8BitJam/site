@@ -3,11 +3,11 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { FaTools } from "react-icons/fa";
 import Hero from "@/components/layout/Hero";
 import SignOut from "@/components/dashboard/SignOut";
 import Link from "next/link";
-import { FaTools } from "react-icons/fa";
-import Project from "@/components/dashboard/Project";
+import Judge from "@/components/dashboard/Judge";
 
 export const metadata: Metadata = {
   title: "Dashboard | 8-Bit Jam",
@@ -38,30 +38,26 @@ async function Page() {
     where: { id: session.user.id },
     include: { projects: true },
   }))!;
-  const submitted = userData.isJudge
-    ? await prisma.project.findMany({ where: { submitted: true } })
+  const pending = userData.isJudge
+    ? await prisma.project.findMany({
+        where: { submitted: true, ratings: { none: { userId: userData.id } } },
+      })
+    : null;
+  const judged = userData.isJudge
+    ? await prisma.project.findMany({
+        where: { submitted: true, ratings: { some: { userId: userData.id } } },
+      })
     : null;
 
   return (
     <div className="max-w-400 w-full px-5 md:px-15 lg:px-40 mx-auto">
       <Hero
         title={`Welcome, ${userData.name}!`}
-        description={`This is your personal dashboard, where you can ${userData.isJudge ? "view and select submitted projects to judge" : "manage your 8-Bit Jam project and participant registration info"}!`}
+        description={`This is your ${userData.isJudge ? "judging" : "personal"} dashboard, where you can ${userData.isJudge ? "view and select submitted projects to judge" : "manage your 8-Bit Jam project and participant registration info"}!`}
       />
-      {/* TODO: add option to toggle visibility of judged projects */}
-      <div className="w-[90%] sm:w-[60%] mx-auto mb-15 flex justify-center items-center text-gray-300 text-center flex-col gap-y-5">
+      <div className="w-full mb-15 flex justify-center items-center text-gray-300 text-center flex-col gap-y-5">
         {userData.isJudge ? (
-          <div>
-            {submitted && submitted.length > 0 ? (
-              submitted.map((project) => (
-                <Project key={project.id} project={project} />
-              ))
-            ) : (
-              <div className="py-20">
-                Participant projects will show up here once submission starts
-              </div>
-            )}
-          </div>
+          <Judge pending={pending} judged={judged} />
         ) : (
           <Link
             href="/project"

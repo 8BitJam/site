@@ -119,8 +119,8 @@ function Page() {
           </li>
           <li>No slideshow required, show us the game and code</li>
           <li>
-            1 team will be selected for each of the 4 categories: overall,
-            innovation, simulation, and style
+            1 team will be selected for each of the 5 categories: overall,
+            impact, technical, innovation, and style
           </li>
           <li>
             2 runner-up teams will be selected for an additional prize as well

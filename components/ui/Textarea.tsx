@@ -24,7 +24,7 @@ function Textarea({
       onChange={(e) => setValue(e.target.value)}
       disabled={disabled}
       className={`bg-gray-900 border-gray-700 border-2 outline-none px-4 py-1 text-gray-300 resize-y font-normal
-       text-base min-h-30 ${styles} ${disabled && "resize-none!"}`}
+       text-base min-h-50 ${styles} ${disabled && "resize-none!"}`}
     />
   );
 }

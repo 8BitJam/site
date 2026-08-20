@@ -9,6 +9,8 @@ import Rubric from "./Rubric";
 import Image from "next/image";
 import Link from "next/link";
 
+//TODO: seo metadata for this page, project, and summary pages
+
 async function Page({
   searchParams,
 }: {
@@ -23,9 +25,10 @@ async function Page({
   if (!user) redirect("/");
   const project = await prisma.project.findUnique({
     where: { id },
-    include: { debug: true },
+    include: { debug: true, ratings: true },
   });
-  if (!project) redirect("/dashboard");
+  if (!project || project.ratings.find((r) => r.userId === user.id))
+    redirect("/dashboard");
 
   return (
     <div className="max-w-400 w-full px-5 md:px-15 lg:px-40 mx-auto flex flex-col items-center pb-15 gap-y-10">
@@ -75,7 +78,7 @@ async function Page({
         </h3>
         <Log debug={project.debug} />
       </div>
-      <Rubric />
+      <Rubric projectId={project.id} />
     </div>
   );
 }

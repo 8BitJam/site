@@ -77,7 +77,7 @@ function Page() {
           <tr className="bg-gray-900">
             <td>9:30 - 10:00 AM</td>
             <td>30 minutes</td>
-            <td>Sidequest: TBD</td>
+            <td>Sidequest: 8-Bit Jam logo redesign competition</td>
           </tr>
           <tr className="bg-gray-900">
             <td>10:30 - 11:00 AM</td>
@@ -97,7 +97,7 @@ function Page() {
           <tr className="bg-gray-900">
             <td>1:30 - 2:00 PM</td>
             <td>30 minutes</td>
-            <td>Sidequest: TBD</td>
+            <td>Sidequest: game dev & octopus trivia Kahoot</td>
           </tr>
           <tr className="bg-gray-900">
             <td>2:30 - 3:00 PM</td>
