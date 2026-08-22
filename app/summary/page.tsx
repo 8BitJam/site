@@ -6,6 +6,8 @@ import { prisma } from "@/lib/prisma";
 import Hero from "@/components/layout/Hero";
 
 const criteria = ["impact", "technicality", "innovation", "style", "overall"];
+const REMOTE_MULTIPLIER = 0.35;
+const INPERSON_MULTIPLIER = 0.65;
 
 async function Page() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -16,44 +18,52 @@ async function Page() {
   });
   const ratings = projects.map((project) => {
     const remoteTotal = [0, 0, 0, 0, 0];
-    let remoteCount = 1; //TODO: reset to zero, this is only for testing
-    let inpersonTotal: number[];
+    const inpersonTotal = [0, 0, 0, 0, 0];
+    let remoteCount = 0;
+    let inpersonCount = 0;
     let overall = 0;
     let inpersonOverall = 0;
     project.ratings.forEach((rating) => {
       let total = 0;
+      criteria.forEach((c, i) => {
+        const num = (rating as Record<string, string | number | User | Date>)[
+          c
+        ] as number;
+        total += num;
+        if (rating.user.isRemote) {
+          remoteTotal[i] = remoteTotal[i] + num * REMOTE_MULTIPLIER;
+        } else {
+          inpersonTotal[i] = inpersonTotal[i] + num * INPERSON_MULTIPLIER;
+        }
+      });
       if (rating.user.isRemote) {
-        criteria.forEach((c, i) => {
-          const num = (rating as Record<string, string | number | User | Date>)[
-            c
-          ] as number;
-          total += num;
-          remoteTotal[i] = remoteTotal[i] + num * 0.35;
-        });
-        overall += total * 0.35;
+        overall += total * REMOTE_MULTIPLIER;
         remoteCount++;
       } else {
-        inpersonTotal = criteria.map((c) => {
-          const num = (rating as Record<string, string | number | User | Date>)[
-            c
-          ] as number;
-          total += num;
-          return num * 0.65;
-        });
-        inpersonOverall = total * 0.65;
+        inpersonOverall += total * INPERSON_MULTIPLIER;
+        inpersonCount++;
       }
     });
     return remoteTotal.map((rating, i) => {
       return (
         Math.round(
           (i === remoteTotal.length - 1
-            ? overall / remoteCount + inpersonOverall
-            : rating / remoteCount + inpersonTotal[i]) * 100,
+            ? overall /
+                (inpersonCount === 0 ? REMOTE_MULTIPLIER : 1) /
+                (remoteCount || 1) +
+              inpersonOverall /
+                (remoteCount === 0 ? INPERSON_MULTIPLIER : 1) /
+                (inpersonCount || 1)
+            : rating /
+                (inpersonCount === 0 ? REMOTE_MULTIPLIER : 1) /
+                (remoteCount || 1) +
+              inpersonTotal[i] /
+                (remoteCount === 0 ? INPERSON_MULTIPLIER : 1) /
+                (inpersonCount || 1)) * 100,
         ) / 100
       );
     });
   });
-  console.log(ratings);
 
   return (
     <div className="max-w-400 w-full px-5 md:px-15 lg:px-40 mx-auto">

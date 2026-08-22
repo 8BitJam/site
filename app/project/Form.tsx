@@ -14,7 +14,7 @@ import Textarea from "@/components/ui/Textarea";
 
 const labelStyles =
   "flex flex-col gap-y-1 font-jersey text-gray-300 text-2xl w-full";
-const canSubmit = true; //TODO: check time
+const canSubmit = false; //TODO: check time
 const emptyLog = { id: "", description: "", agent: "", createdAt: new Date() };
 
 interface FormProps {
