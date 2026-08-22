@@ -1,6 +1,6 @@
 "use client";
 
-import type { DebugType, ProjectType } from "@/types/project";
+import type { DebugType, LogoType, ProjectType } from "@/types/project";
 import { useState, useEffect } from "react";
 // import { types } from "@/lib/constants";
 import { saveProject, debugLog, submitProject } from "./actions";
@@ -197,7 +197,9 @@ function Form({ existing, rating }: FormProps) {
             />
           ) : (
             <Upload
-              setProject={setProject}
+              setProject={
+                setProject as React.Dispatch<React.SetStateAction<LogoType>>
+              }
               existing={project}
               disabled={project.submitted}
             />

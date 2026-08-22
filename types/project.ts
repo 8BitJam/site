@@ -30,3 +30,10 @@ export type SubmissionType = {
   id: number;
   name: string;
 };
+
+export type LogoType = {
+  id: string;
+  banner: string;
+  bannerName: string;
+  submitted?: boolean;
+};

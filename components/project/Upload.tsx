@@ -1,18 +1,19 @@
 "use client";
 
-import type { ProjectType } from "@/types/project";
 import type { PutBlobResult } from "@vercel/blob";
+import type { LogoType } from "@/types/project";
 import { useState, useRef } from "react";
 import { FaUpload } from "react-icons/fa";
 import Image from "next/image";
 
 interface UploadProps {
-  setProject: React.Dispatch<React.SetStateAction<ProjectType>>;
-  existing: ProjectType;
+  setProject: React.Dispatch<React.SetStateAction<LogoType>>;
+  existing: LogoType;
   disabled: boolean;
+  text?: string;
 }
 
-function Upload({ setProject, existing, disabled }: UploadProps) {
+function Upload({ setProject, existing, disabled, text }: UploadProps) {
   const [uploading, setUploading] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -37,7 +38,7 @@ function Upload({ setProject, existing, disabled }: UploadProps) {
     <div className="text-gray-300 text-xl py-10 text-center">Uploading...</div>
   ) : (
     <label
-      className={`${!disabled && "cursor-pointer"} flex items-center text-center text-xl flex-col gap-y-3 border-2 py-5 border-gray-700 hover:bg-gray-900`}
+      className={`${!disabled && "cursor-pointer"} flex items-center text-center text-xl flex-col gap-y-3 border-2 py-5 border-gray-700 hover:bg-gray-900 min-w-100`}
       onClick={(e) => (disabled ? e.preventDefault() : undefined)}
     >
       <input
@@ -61,8 +62,12 @@ function Upload({ setProject, existing, disabled }: UploadProps) {
       ) : (
         <>
           <FaUpload size={50} />
-          Upload a banner image for your game!
-          <span className="text-lg">Recommended aspect ratio is 16:9</span>
+          {text || (
+            <>
+              Upload a banner image for your game!
+              <span className="text-lg">Recommended aspect ratio is 16:9</span>
+            </>
+          )}
         </>
       )}
     </label>

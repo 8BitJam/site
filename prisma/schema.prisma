@@ -27,6 +27,7 @@ model User {
 
   projects Project[] //TODO: why is it plural? this should be a one to one relation
   ratings  Rating[]
+  logo     Logo[]
 
   @@unique([email])
   @@map("user")
@@ -128,6 +129,18 @@ model Rating {
   user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   projectId String
   project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+model Logo {
+  id         String  @id @default(uuid())
+  banner     String
+  bannerName String
+  submitted  Boolean @default(false)
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
 }
