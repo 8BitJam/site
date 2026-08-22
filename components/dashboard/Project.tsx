@@ -57,8 +57,8 @@ function Project({ project, judged }: ProjectProps) {
         </div>
       </div>
       <div className="text-gray-300 text-sm">
-        {project.description.slice(0, 50) +
-          (project.description.length > 50 ? "..." : "")}
+        {project.description.slice(0, 150) +
+          (project.description.length > 150 ? "..." : "")}
       </div>
     </Link>
   );
