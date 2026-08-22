@@ -1,21 +1,32 @@
-import type { User } from "@/lib/generated/prisma/client";
+import type { Project, Rating, User } from "@/lib/generated/prisma/client";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import Hero from "@/components/layout/Hero";
+import Image from "next/image";
+import Projects from "./Projects";
 
 const criteria = ["impact", "technicality", "innovation", "style", "overall"];
 const REMOTE_MULTIPLIER = 0.35;
 const INPERSON_MULTIPLIER = 0.65;
 
+export type RatingType = Rating & {
+  user: User;
+};
+
+export type ProjectType = Project & {
+  ratings: RatingType[];
+};
+
 async function Page() {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session || session.user.id !== "6LXggIqhGDpXBqDviDyPvsynpZl3QHY2")
     redirect("/");
-  const projects = await prisma.project.findMany({
+  const projects: ProjectType[] = await prisma.project.findMany({
     include: { ratings: { include: { user: true } } },
   });
+  const logos = await prisma.logo.findMany({ where: { submitted: true } });
   const ratings = projects.map((project) => {
     const remoteTotal = [0, 0, 0, 0, 0];
     const inpersonTotal = [0, 0, 0, 0, 0];
@@ -71,36 +82,18 @@ async function Page() {
         title="SUMMARY"
         description="Check out each project's rating summary and judging results!"
       />
-      <div className="text-gray-300 mb-15">
-        <div className="flex border-b-2 border-gray-700">
-          <div className="flex-2 font-bold text-center py-2 hover:bg-gray-900 cursor-pointer">
-            Name
-          </div>
-          <div className="flex-1 font-bold text-center py-2 hover:bg-gray-900 cursor-pointer">
-            Impact
-          </div>
-          <div className="flex-1 font-bold text-center py-2 hover:bg-gray-900 cursor-pointer">
-            Technicality
-          </div>
-          <div className="flex-1 font-bold text-center py-2 hover:bg-gray-900 cursor-pointer">
-            Innovation
-          </div>
-          <div className="flex-1 font-bold text-center py-2 hover:bg-gray-900 cursor-pointer">
-            Style
-          </div>
-          <div className="flex-1 font-bold text-center py-2 hover:bg-gray-900 cursor-pointer">
-            Overall
-          </div>
-        </div>
-        {projects.map((project, i) => (
-          <div key={project.id} className="flex border-b border-gray-700">
-            <div className="flex-2 text-center py-2">{project.name}</div>
-            {criteria.map((c, index) => (
-              <div key={c} className="flex-1 text-center py-2">
-                {ratings[i][index]}
-              </div>
-            ))}
-          </div>
+      <Projects projects={projects} ratings={ratings} criteria={criteria} />
+      <h2 className="text-blue-600">LOGOS</h2>
+      <div className="flex gap-3 flex-wrap">
+        {logos.map((logo) => (
+          <Image
+            key={logo.id}
+            src={logo.banner}
+            alt="Logo"
+            width={300}
+            height={300}
+            className="w-50"
+          />
         ))}
       </div>
     </div>
