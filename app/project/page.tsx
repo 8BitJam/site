@@ -44,7 +44,7 @@ async function Page() {
     <div className="max-w-400 w-full px-5 md:px-15 lg:px-40 mx-auto flex flex-col items-center pb-15">
       <Hero
         title="MANAGE PROJECT"
-        description="Manage your project information and submit it for judging here!"
+        description="Manage your project information and submit it for judging here. Only one person on your team needs to submit a project. Don't forget to save every time you make changes!"
       />
       <Form existing={existingProject || undefined} />
     </div>

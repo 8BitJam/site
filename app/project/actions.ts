@@ -15,7 +15,7 @@ export async function saveProject(project: ProjectType) {
         update: {
           ...project,
           id: undefined,
-          type: project.type.id,
+          // type: project.type.id,
           debug: {
             connect: project.debug.map((d) => {
               return { id: d.id };
@@ -25,7 +25,7 @@ export async function saveProject(project: ProjectType) {
         create: {
           ...project,
           id: undefined,
-          type: project.type.id,
+          // type: project.type.id,
           debug: {
             connect: project.debug.map((d) => {
               return { id: d.id };

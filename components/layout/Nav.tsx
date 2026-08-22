@@ -31,16 +31,17 @@ async function Nav() {
           <Btn href="/rules" text="RULES" color="hover:bg-red-950" />
           <Btn href="/sponsors" text="SPONSORS" color="hover:bg-green-950" />
           {session?.user ? (
-            <Btn href="/dashboard" text="DASHBOARD" />
+            <Btn href="/dashboard" text="DASHBOARD" primary />
           ) : (
-            <Btn href="/signin" text="SIGN UP" />
+            <Btn href="/signin" text="SIGN UP" primary />
           )}
-          <Btn
+          {/* TODO: make conditional rendering completely automatic based on time and stuff */}
+          {/* <Btn
             href="https://forms.gle/HiKE87KTgp5hzoWU7"
             text="REGISTER"
             primary
             blank
-          />
+          /> */}
         </div>
       </div>
     </div>

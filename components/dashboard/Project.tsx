@@ -20,7 +20,7 @@ function Project({ project, judged }: ProjectProps) {
           Judged
         </div>
       )}
-      <div className="w-full h-[222.75px] flex items-center justify-center bg-gray-900/50">
+      <div className="w-full h-[222.75px] flex items-center justify-center bg-gray-900/50 overflow-hidden">
         <Image
           src={project.banner}
           alt="Project banner"

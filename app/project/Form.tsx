@@ -2,7 +2,7 @@
 
 import type { DebugType, ProjectType } from "@/types/project";
 import { useState, useEffect } from "react";
-import { types } from "@/lib/constants";
+// import { types } from "@/lib/constants";
 import { saveProject, debugLog, submitProject } from "./actions";
 import { LuPartyPopper } from "react-icons/lu";
 import Upload from "@/components/project/Upload";
@@ -11,6 +11,7 @@ import Btn from "@/components/ui/Btn";
 import Image from "next/image";
 import Log from "@/components/project/Log";
 import Textarea from "@/components/ui/Textarea";
+import Tooltip from "@/components/ui/Tooltip";
 
 const labelStyles =
   "flex flex-col gap-y-1 font-jersey text-gray-300 text-2xl w-full";
@@ -32,7 +33,8 @@ function Form({ existing, rating }: FormProps) {
       name: "",
       demo: "",
       repo: "",
-      type: types[0],
+      // type: types[0],
+      type: "",
       description: "",
       instructions: "",
       banner: "",
@@ -142,11 +144,12 @@ function Form({ existing, rating }: FormProps) {
           />
         </label>
         <label className={labelStyles}>
-          <div>
+          <div className="flex items-center">
             Project description{" "}
             <span title="Required" className={asteriskStyles}>
               *
             </span>
+            <Tooltip text="What is your game about? What does it focus on? What is different about it? How did you make it? Describe everything about your game here!" />
           </div>
           <Textarea
             placeholder="Minecraft is a very fun game"
@@ -159,11 +162,12 @@ function Form({ existing, rating }: FormProps) {
           />
         </label>
         <label className={labelStyles}>
-          <div>
+          <div className="flex items-center">
             Gameplay instructions{" "}
             <span title="Required" className={asteriskStyles}>
               *
             </span>
+            <Tooltip text="How are the sprites controlled? How to beat a level? What's the gameplay objective? Teach people how to play your game here!" />
           </div>
           <Textarea
             placeholder="WASD to move, space to jump..."
@@ -176,11 +180,12 @@ function Form({ existing, rating }: FormProps) {
           />
         </label>
         <label className={labelStyles}>
-          <div>
+          <div className="flex items-center">
             Project banner{" "}
             <span title="Required" className={asteriskStyles}>
               *
             </span>
+            <Tooltip text="Upload a screenshot or banner of your game here to showcase it! (no AI images allowed)" />
           </div>
           {rating ? (
             <Image
@@ -199,11 +204,12 @@ function Form({ existing, rating }: FormProps) {
           )}
         </label>
         <label className={labelStyles}>
-          <div>
+          <div className="flex items-center">
             Demo URL{" "}
             <span title="Required" className={asteriskStyles}>
               *
             </span>
+            <Tooltip text="Deploy your game to the internet and put an online playable link for your project here" />
           </div>
           <Input
             placeholder="minecraft.net/download"
@@ -213,16 +219,32 @@ function Form({ existing, rating }: FormProps) {
           />
         </label>
         <label className={labelStyles}>
-          <div>
+          <div className="flex items-center">
             Source code{" "}
             <span title="Required" className={asteriskStyles}>
               *
             </span>
+            <Tooltip text="Put the link of your project's GitHub repository containing all the code here (everything has to be open source)" />
           </div>
           <Input
             placeholder="github.com/8BitJam/site"
             value={project.repo}
             setValue={(repo: string) => setProject({ ...project, repo })}
+            disabled={project.submitted}
+          />
+        </label>
+        <label className={labelStyles}>
+          <div className="flex items-center">
+            Technology{" "}
+            <span title="Required" className={asteriskStyles}>
+              *
+            </span>
+            <Tooltip text="What game engine, technology, framework, library, or programming languages does your game use?" />
+          </div>
+          <Input
+            placeholder="Unity"
+            value={project.type}
+            setValue={(type: string) => setProject({ ...project, type })}
             disabled={project.submitted}
           />
         </label>
@@ -282,18 +304,22 @@ function Form({ existing, rating }: FormProps) {
           </div>
         </div>
         <div className={labelStyles}>
-          AI usage log
-          <div className="flex flex-col gap-y-3">
+          <div className="flex items-center">
+            AI usage log
+            <Tooltip text="Please log an entry below documenting every time you used an LLM/AI to debug or help with your project in any way" />
+          </div>
+          <div className="flex flex-col gap-y-3 border-2 border-gray-700 px-5 py-3">
             <Log debug={project.debug} />
             {!project.submitted &&
               (logEntry ? (
-                <div>
+                <div className="flex gap-x-3">
                   <Input
                     placeholder="I used AI to debug..."
                     value={logEntry.description}
                     setValue={(description: string) =>
                       setLogEntry({ ...logEntry, description })
                     }
+                    styles="flex-1"
                   />
                   <Input
                     placeholder="Claude Code"
@@ -301,6 +327,7 @@ function Form({ existing, rating }: FormProps) {
                     setValue={(agent: string) =>
                       setLogEntry({ ...logEntry, agent })
                     }
+                    styles="w-40"
                   />
                   <Btn text="Log entry" onclick={handleLog} primary />
                   <Btn text="Cancel" onclick={() => setLogEntry(null)} />

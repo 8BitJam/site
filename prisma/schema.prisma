@@ -85,7 +85,8 @@ model Project {
   name         String
   demo         String
   repo         String
-  type         Int      @default(0)
+  // type         Int      @default(0)
+  type         String
   description  String
   instructions String
   banner       String

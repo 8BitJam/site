@@ -20,7 +20,7 @@ function Log({ debug }: { debug: DebugType[] }) {
           </div>
         ))
       ) : (
-        <div className="py-2 text-xl text-center">No entries logged</div>
+        <div className="py-5 text-xl text-center">No entries logged</div>
       )}
     </div>
   );

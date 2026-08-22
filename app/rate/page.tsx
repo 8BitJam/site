@@ -68,6 +68,10 @@ async function Page({
         </h3>
         <div className="text-gray-300">{project.instructions}</div>
         <h3 className="text-blue-600 font-bold font-jersey text-3xl">
+          Technology Used
+        </h3>
+        <div className="text-gray-300">{project.type}</div>
+        <h3 className="text-blue-600 font-bold font-jersey text-3xl">
           Team Name
         </h3>
         <div className="text-gray-300">

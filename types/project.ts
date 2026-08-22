@@ -3,7 +3,8 @@ export type ProjectType = {
   name: string;
   demo: string;
   repo: string;
-  type: SubmissionType;
+  // type: SubmissionType;
+  type: string;
   description: string;
   instructions: string;
   banner: string;

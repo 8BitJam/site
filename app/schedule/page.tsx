@@ -79,13 +79,13 @@ function Page() {
             <td>30 minutes</td>
             <td>Sidequest: 8-Bit Jam logo redesign competition</td>
           </tr>
-          <tr className="bg-gray-900">
+          {/* <tr className="bg-gray-900">
             <td>10:30 - 11:00 AM</td>
             <td>30 minutes</td>
             <td>Mini-game: chess tournament</td>
-          </tr>
+          </tr> */}
           <tr className="bg-gray-900">
-            <td>11:30 - 12:00 PM</td>
+            <td>10:30 - 11:00 AM</td>
             <td>30 minutes</td>
             <td>Workshop: game dev</td>
           </tr>

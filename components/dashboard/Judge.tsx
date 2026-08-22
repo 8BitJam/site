@@ -37,7 +37,7 @@ function Judge({ pending, judged }: JudgeProps) {
           : (!showJudged || !judged || judged.length === 0) && (
               <div className="py-20">
                 {judged && judged.length > 0
-                  ? "You've finished judging all the submitted projects, greak work!"
+                  ? "You've finished judging all the submitted projects, great work!"
                   : "Participant projects will show up here once submission starts"}
               </div>
             )}

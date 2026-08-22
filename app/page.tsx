@@ -65,7 +65,7 @@ export default async function Home() {
             <LuPartyPopper size={25} />
           </Card>
         </div>
-        {!session && (
+        {/* {!session && (
           <>
             <Header
               title="HOW DO I PARTICIPATE?"
@@ -95,7 +95,7 @@ export default async function Home() {
               </Card>
             </div>
           </>
-        )}
+        )} */}
       </div>
     </div>
   );

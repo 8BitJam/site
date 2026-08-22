@@ -1,10 +1,14 @@
 import { saveEmail } from "./actions";
 import { FaLocationDot, FaCalendar, FaTrophy } from "react-icons/fa6";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Form from "./Form";
 import Btn from "../ui/Btn";
 import Image from "next/image";
 
-function Hero() {
+async function Hero() {
+  const session = await auth.api.getSession({ headers: await headers() });
+
   return (
     <div className="py-15 md:py-5 lg:py-15 flex flex-col-reverse gap-5 md:flex-row justify-between md:items-center">
       <div className="flex flex-col gap-y-7">
@@ -35,7 +39,7 @@ function Hero() {
           as the limited spots are first come, first served.
         </div>
         <div className="flex flex-col sm:flex-row gap-5">
-          <Btn
+          {/* <Btn
             href="https://forms.gle/HiKE87KTgp5hzoWU7"
             text="REGISTER NOW"
             primary
@@ -46,7 +50,12 @@ function Hero() {
             text="VOLUNTEERING FORM"
             primary
             blank
-          />
+          /> */}
+          {session ? (
+            <Btn href="/dashboard" text="DASHBOARD" primary />
+          ) : (
+            <Btn href="/signin" text="SIGN IN" primary />
+          )}
           <Btn href="/about" text="LEARN MORE" />
         </div>
       </div>
