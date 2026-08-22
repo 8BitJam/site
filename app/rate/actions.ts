@@ -28,10 +28,10 @@ export async function submitRating(
           await prisma.rating.create({
             data: {
               impact: ratings[0],
-              technicality: ratings[0],
-              innovation: ratings[0],
-              style: ratings[0],
-              overall: ratings[0],
+              technicality: ratings[1],
+              innovation: ratings[2],
+              style: ratings[3],
+              overall: ratings[4],
               feedback,
               userId: session.user.id,
               projectId,
