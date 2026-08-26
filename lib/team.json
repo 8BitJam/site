@@ -33,50 +33,60 @@
   ],"judges": [
     {
       "id": 0,
-      "name": "Ramandeep Arora",
-      "roles": ["Stanley Black & Decker Software Engineer"],
-      "link": "https://www.linkedin.com/in/ramandeep-arora/",
-      "inPerson": true
-    },
-    {
-      "id": 1,
-      "name": "Ruthuparna Naikar",
-      "roles": ["FIS AIML Engineer"],
-      "link":"https://www.linkedin.com/in/rnaikar/",
-      "inPerson": true
-    },
-    {
-      "id": 2,
       "name": "Sashank Agarwal",
       "roles": ["NVIDIA Senior Cloud Engineer"],
       "link":"https://www.linkedin.com/in/sashankagarwal/"
     },
     {
-      "id": 3,
+      "id": 1,
+      "name": "Ramandeep Arora",
+      "roles": ["Stanley Black & Decker Software Engineer"],
+      "link": "https://www.linkedin.com/in/ramandeep-arora/"
+    },
+    {
+      "id": 2,
       "name": "Shreyas Aswar",
       "roles": ["UC Davis Health Software Engineer"],
       "link":"https://www.linkedin.com/in/shreyasaswar"
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "Axel Cassou",
       "roles": ["HUD Research Engineer"],
       "link":"https://www.linkedin.com/in/axel-cassou-a50280260/"
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "Mandar Chaudhari",
       "roles": ["Land IQ Software Engineer"],
       "link":"https://www.linkedin.com/in/mandar-chaudhari-7a219a200/"
     },
     {
+      "id": 5,
+      "name": "Shreyans Lodha",
+      "roles": ["RISE Research Co-Founder"],
+      "link":"https://www.linkedin.com/in/lodhashreyans/"
+    },
+    {
       "id": 6,
+      "name": "Yash Mundada",
+      "roles": ["RISE Research Co-Founder"],
+      "link":"https://www.linkedin.com/in/yashmundada1/"
+    },
+    {
+      "id": 7,
+      "name": "Ruthuparna Naikar",
+      "roles": ["FIS AIML Engineer"],
+      "link":"https://www.linkedin.com/in/rnaikar/"
+    },
+    {
+      "id": 8,
       "name": "Naga Deepak Pothuraju",
       "roles": ["TikTok Senior Engineering Manager"],
       "link":"https://www.linkedin.com/in/deppfx/"
     },
     {
-      "id": 7,
+      "id": 9,
       "name": "Vincent Vu",
       "roles": ["Paraform Software Engineer"],
       "link":"https://www.linkedin.com/in/vmvu/"
