@@ -355,17 +355,22 @@ function Form({ existing, rating }: FormProps) {
       ) : (
         <>
           {error && <div className="text-red-500">{error}</div>}
-          <div className="flex gap-x-3">
+          <div className="flex flex-col gap-3">
             {canSubmit && (
+              // <Btn
+              //   text={
+              //     state === 2
+              //       ? "Submitting..."
+              //       : state === 3
+              //         ? "Submitted!"
+              //         : "Submit"
+              //   }
+              //   onclick={handleSubmit}
+              //   primary
+              // />
               <Btn
-                text={
-                  state === 2
-                    ? "Submitting..."
-                    : state === 3
-                      ? "Submitted!"
-                      : "Submit"
-                }
-                onclick={handleSubmit}
+                text="Submission closed! The event already ended, what are you doing here?"
+                href=""
                 primary
               />
             )}

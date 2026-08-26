@@ -30,6 +30,7 @@ async function Nav() {
           <Btn href="/schedule" text="SCHEDULE" color="hover:bg-orange-950" />
           <Btn href="/rules" text="RULES" color="hover:bg-red-950" />
           <Btn href="/sponsors" text="SPONSORS" color="hover:bg-green-950" />
+          <Btn href="/winners" text="WINNERS" color="hover:bg-green-950" />
           {session?.user ? (
             <Btn href="/dashboard" text="DASHBOARD" primary />
           ) : (

@@ -5,6 +5,7 @@ import { headers } from "next/headers";
 import Form from "./Form";
 import Btn from "../ui/Btn";
 import Image from "next/image";
+import Link from "next/link";
 
 async function Hero() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -35,8 +36,13 @@ async function Hero() {
         </div>
         {/* <Form saveEmail={saveEmail} /> */}
         <div className="text-sm text-gray-400 font-inter max-w-100">
-          Registration closes August 21st, please register as early as you can
-          as the limited spots are first come, first served.
+          {/* Registration closes August 21st, please register as early as you can
+          as the limited spots are first come, first served. */}
+          8-Bit Jam 2026 has ended! Check out the{" "}
+          <Link href="/winners" className="underline">
+            winners
+          </Link>{" "}
+          and come back when the 8-Bit Jam 2.0 interest form opens
         </div>
         <div className="flex flex-col sm:flex-row gap-5">
           {/* <Btn

@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SiGithub, SiHackclub, SiInstagram, SiTiktok } from "react-icons/si";
+import {
+  SiDiscord,
+  SiGithub,
+  SiHackclub,
+  SiInstagram,
+  SiTiktok,
+} from "react-icons/si";
 
 const socialStyles = "flex flex-col gap-y-2 items-center w-10";
 
@@ -49,6 +55,14 @@ function Footer() {
           >
             <SiTiktok size={25} />
             TikTok
+          </a>
+          <a
+            href="https://discord.gg/GUDw69E5Qg"
+            target="_blank"
+            className={socialStyles}
+          >
+            <SiDiscord size={25} />
+            Discord
           </a>
           <a
             href="https://github.com/8BitJam"

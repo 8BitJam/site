@@ -42,13 +42,16 @@ function Page() {
             link="fairfaxcounty.gov/library/"
           />
         </div>
-        {/* <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
+        <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
           FINANCIAL SPONSORS
         </h2>
         <div className="flex gap-5 flex-wrap justify-center">
-          <Card empty />
-          <Card empty />
-        </div> */}
+          <Card
+            logo="/sponsors/Algoverse.png"
+            name="Algoverse"
+            link="algoverseairesearch.org"
+          />
+        </div>
         <h2 className="font-jersey text-blue-600 font-bold text-center text-4xl">
           PRIZE SPONSORS
         </h2>
