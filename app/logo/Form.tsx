@@ -24,7 +24,6 @@ function Form({ existing }: { existing?: LogoType }) {
 
   async function handleSubmit() {
     setSubmitting(true);
-    console.log(logo);
     await submitLogo(logo);
     setSubmitting(false);
   }

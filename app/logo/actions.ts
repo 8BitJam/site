@@ -10,7 +10,7 @@ export async function submitLogo(logo: LogoType) {
   try {
     const session = await auth.api.getSession({ headers: await headers() });
     if (session) {
-      const submitted = await prisma.logo.create({
+      await prisma.logo.create({
         data: {
           ...logo,
           id: undefined,
@@ -18,7 +18,6 @@ export async function submitLogo(logo: LogoType) {
           submitted: true,
         },
       });
-      console.log(submitted);
       revalidatePath("/logo");
     }
   } catch (err) {
