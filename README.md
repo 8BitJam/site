@@ -1,4 +1,4 @@
-# [8-Bit Jam](https://8bitjam.vercel.app)
+# [8-Bit Jam](https://8bitjam.win)
 
 ![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
@@ -10,6 +10,8 @@
 
 ![Website homepage screenshot](/public/banner.png)
 
+8-Bit Jam 2026 has successfully come to a close! I wanted to give a huge thank you to all of our sponsors, judges, volunteers, and of course our participants for making this event possible! You can see all the winners and photo highlights of the event on the [winners](https://8bitjam.win/winners) page. This website will probably be permanently archived soon since I'm planning to rewrite the entire platform for 8-Bit Jam 2.0 next year because I rushed this site and it has quite a bit of issues.
+
 This is a retro 8-bit-themed landing website for the game hackathon, 8-Bit Jam, I’m hosting this August! You can register, check out the schedule, and learn more about the event on this website. 8-Bit Jam is a fun and unique hackathon happening this summer in Great Falls, Virginia that's focused on game dev, with fun challenges, sidequests, and even game tournaments to make this the most fun and memorable hackathon you've ever attended! This landing page is meant to answer all your questions about the hackathon, as well as providing a place for you to register and sign up for an account on the website. Since this is a game jam focused around the number 8 (hence the octopus), I decided to go with this cool 8-bit design style to make the website fit the event better and have a fun personality.
 
 ## Pages
@@ -19,8 +21,13 @@ This is a retro 8-bit-themed landing website for the game hackathon, 8-Bit Jam, 
 - Schedule: a detailed time table for the event's specific activities
 - Rules: general, eligibility, participation, and project submission guidelines
 - Sponsors: a page that displays our venue, financial, and prize sponsors
+- Winners: photo gallery of event highlights and all the winners with their certificate, award, and team name
 - Sign in: sign up/sign in to an account
 - Dashboard: place to manage your account, registration, and project
+- Project: update and submit your project by filling in all the information and logging AI usage
+- Rate: rating page for judges with detailed information about each project and a rating rubric
+- Summary: admin page that only I can access with my account since it shows realtime weighted ratings of each project
+- Logo: logo design submission form for the logo redesign sidequest
 
 ## Tech stack
 
@@ -28,7 +35,7 @@ This is a [Next.js](https://nextjs.org) app hosted on [Vercel](https://vercel.co
 
 ## Quick start
 
-To host my portfolio on your machine (why?) for local development or other purposes, simply follow these steps below:
+To host the 8-Bit Jam website on your machine (why?) for local development or other purposes, simply follow these steps below:
 
 1. Clone the GitHub [repository](https://github.com/8bitjam/site) using the command
    ```bash
@@ -47,7 +54,7 @@ To host my portfolio on your machine (why?) for local development or other purpo
 
 ## Contribution
 
-Any kind of contribution is welcome (but why?), but please follow the guideline below!
+Any kind of contribution is welcome, but please follow the guideline below!
 
 - Submit an issue if there's a bug/issue or if you want to suggest new features/subscriptions to be added.
 - Submit a pull request if you want to add or improve the code base!
